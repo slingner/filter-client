@@ -62,11 +62,12 @@ export default class App extends React.Component {
         }
         return res.json()
       })
-      .then(beans => 
+      .then(beans => {
+        console.log(beans)
         this.setState({
           beans,
           error: null,
-      }))
+      })})
       .catch(error => {
         console.error(error)
         this.setState({ error })
