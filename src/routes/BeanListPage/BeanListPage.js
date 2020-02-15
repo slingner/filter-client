@@ -6,6 +6,7 @@ import BeanCard from '../BeanCard/BeanCard';
 import './BeanListPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
+// import AuthApiService from '../../services/auth-api-service'
 
 
 export default class BeanListPage extends Component {
@@ -63,10 +64,6 @@ export default class BeanListPage extends Component {
     this.context.fetchBeansByFlavorId(array)
   }
 
-  handleSaveCardClick = () => {
-    
-  }
-  
   render() {
     const { beans } = this.context
     const { flavors } = this.state
@@ -79,7 +76,6 @@ export default class BeanListPage extends Component {
               checked={this.state.flavorsSelected.get(flavors.flavor_name)}
               handleClick={this.handleClick}
             />    
-           
         </div>
         <button className='button' onClick={this.handleClick}>Submit</button>
         <div className='BookmarkList__list' aria-live='polite'>

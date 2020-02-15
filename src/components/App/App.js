@@ -70,15 +70,11 @@ export default class App extends React.Component {
       .catch(error => {
         console.error(error)
         this.setState({ error })
-      })
+      })   
   }
 
   //do I also need to add JWT user data to state here?
-  
 
-  // fetchBeansByUser = (userId) => {
-  //   fetch(`${config.API_ENDPOINT}/beans?flavor_note_id=${userId}`, {
-  // }
 
   handleLoginSuccess = () => {
     if(TokenService.hasAuthToken()) {
@@ -100,7 +96,7 @@ export default class App extends React.Component {
   render(){
     const contextValue = {
       beans: this.state.beans,
-      fetchBeansByFlavorId: this.fetchBeansByFlavorId
+      fetchBeansByFlavorId: this.fetchBeansByFlavorId,
     }
 
     return (

@@ -1,5 +1,5 @@
 import config from '../config'
-import TokenService from './token-service'
+// import TokenService from './token-service'
 
 const AuthApiService = {
   postLogin(credentials) {
@@ -23,23 +23,6 @@ const AuthApiService = {
         'content-type': 'application/json',
       },
       body: JSON.stringify(user),
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
-  },
-  postBeanIdOnUserTable(beanId, userid) {
-    return fetch(`${config.API_ENDPOINT}/beans/${userid}`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`
-      },
-      body: JSON.stringify({
-        coffee_bean_id: beanId
-      }),
     })
       .then(res =>
         (!res.ok)
