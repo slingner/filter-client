@@ -6,6 +6,10 @@ import TokenService from '../../services/token-service';
 
 export default class BeanPage extends React.Component {
 
+  state = {
+    beanUser:null
+  }
+
   postBeanIdOnUserTable = (beanId) => {
     return fetch(`${config.API_ENDPOINT}/beans`, {
       method: 'POST',
@@ -29,10 +33,9 @@ export default class BeanPage extends React.Component {
   }
 
 
-  handleSaveCardClick = (event, id) => {
-    event.preventDefault()
+  handleSaveCardClick = (id) => {
     this.postBeanIdOnUserTable(id)
-      console.log(id)
+    console.log(id)
   }
 
   render() {
@@ -56,11 +59,10 @@ export default class BeanPage extends React.Component {
             <p className='flavor_notes'>
              Flavor Notes: {this.props.flavor_notes}
             </p>
-            <button className='save' onClick={(e) => this.handleSaveCardClick(e, this.props.id)}>Save</button>
+            <button className='save' onClick={() => this.handleSaveCardClick((this.props.id))}>Save</button>
           </div>
         )}
   }
-
 
 BeanPage.propTypes = {
   bean_name: PropTypes.string.isRequired,
