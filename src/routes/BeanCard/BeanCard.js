@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import './BeanCard.css'
 import config from '../../config';
 import TokenService from '../../services/token-service';
+import { Link } from 'react-router-dom'
+
 
 export default class BeanPage extends React.Component {
 
@@ -43,9 +45,11 @@ export default class BeanPage extends React.Component {
   
     return (
           <div className='Bean'>
-            <h3 className='Bean_name'>
-             {this.props.bean_name}
-            </h3>
+            <Link className='bean-page-link' to={`/beans/${this.props.id}`} >
+              <h3 className='Bean_name'>
+              {this.props.bean_name}
+              </h3>
+            </Link>
             <p className='Bean_origin'>
              Origin: {this.props.bean_origin}
             </p>
@@ -61,7 +65,7 @@ export default class BeanPage extends React.Component {
             <p className='flavor_notes'>
              Flavor Notes: {this.props.flavor_notes}
             </p>
-            {this.context.isAuthenticated
+            {TokenService.hasAuthToken()
             ? <button className='save' onClick={() => this.handleSaveCardClick((this.props.id))}>Save</button>
             : ''}
             

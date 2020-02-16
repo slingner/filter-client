@@ -14,8 +14,6 @@ import BeansListContext from '../../contexts/BeansListContext';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import './App.css';
-
-
 export default class App extends React.Component {
   state = {
     beans: [],
@@ -23,7 +21,6 @@ export default class App extends React.Component {
     isAuthenticated: false
   };
 
-  
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/beans`, {
       method: 'GET',
@@ -47,6 +44,34 @@ export default class App extends React.Component {
         this.setState({ error })
       })
   }
+
+
+  fetchSingleBean = () => {
+    const { beanId } = this.props.match.params
+    fetch(`${config.API_ENDPOINT}/beans/${beanId}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(error => Promise.reject(error))
+        }
+        return res.json()
+      })
+      .then(beans => 
+        this.setState({
+          beans,
+          error: null,
+      }))
+      .catch(error => {
+        console.error(error)
+        this.setState({ error })
+      })
+  }
+
+
 
   fetchBeansByFlavorId = (arrayOfIds, isFromUser) => {
     if(!isFromUser) {
@@ -124,8 +149,6 @@ export default class App extends React.Component {
       })
   }
 
-
-
   handleLoginSuccess = () => {
     if(TokenService.hasAuthToken()) {
       this.setState({
@@ -141,14 +164,12 @@ export default class App extends React.Component {
     })
   }
 
-
-
   render(){
     const contextValue = {
       beans: this.state.beans,
       fetchBeansByFlavorId: this.fetchBeansByFlavorId,
       fetchBeanByUser: this.fetchBeanByUser,
-      isAuthenticated: this.state.isAuthenticated
+      fetchSingleBean: this.fetchSingleBean
     }
 
     return (
