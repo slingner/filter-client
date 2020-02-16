@@ -148,6 +148,7 @@ export default class App extends React.Component {
       beans: this.state.beans,
       fetchBeansByFlavorId: this.fetchBeansByFlavorId,
       fetchBeanByUser: this.fetchBeanByUser,
+      isAuthenticated: this.state.isAuthenticated
     }
 
     return (

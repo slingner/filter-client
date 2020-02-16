@@ -61,7 +61,10 @@ export default class BeanPage extends React.Component {
             <p className='flavor_notes'>
              Flavor Notes: {this.props.flavor_notes}
             </p>
-            <button className='save' onClick={() => this.handleSaveCardClick((this.props.id))}>Save</button>
+            {this.context.isAuthenticated
+            ? <button className='save' onClick={() => this.handleSaveCardClick((this.props.id))}>Save</button>
+            : ''}
+            
             
           </div>
         )}
