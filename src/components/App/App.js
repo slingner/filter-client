@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
+import Homepage from '../../routes/HomePage/HomePage'
 import BeanListPage from '../../routes/BeanListPage/BeanListPage';
 import BeanPage from '../../routes/BeanCard/BeanCard';
 import LoginPage from '../../routes/LoginPage/LoginPage';
@@ -28,7 +29,6 @@ export default class App extends React.Component {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_KEY}`
       }
     })
       .then(res => {
@@ -48,12 +48,63 @@ export default class App extends React.Component {
       })
   }
 
-  fetchBeansByFlavorId = (arrayOfIds) => {
-    fetch(`${config.API_ENDPOINT}/beans?flavor_note_id=${arrayOfIds}`, {
+  fetchBeansByFlavorId = (arrayOfIds, isFromUser) => {
+    if(!isFromUser) {
+      fetch(`${config.API_ENDPOINT}/beans?flavor_note_id=${arrayOfIds}`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        }
+      })
+        .then(res => {
+          if (!res.ok) {
+            return res.json().then(error => Promise.reject(error))
+          }
+          return res.json()
+        })
+        .then(beans => {
+          console.log(beans)
+          this.setState({
+            beans,
+            error: null,
+        })})
+        .catch(error => {
+          console.error(error)
+          this.setState({ error })
+        })   
+    } else {
+      fetch(`${config.API_ENDPOINT}/userbean?flavor_note_id=${arrayOfIds}`, {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+          'Authorization': `Bearer ${TokenService.getAuthToken()}`
+        }
+      })
+        .then(res => {
+          if (!res.ok) {
+            return res.json().then(error => Promise.reject(error))
+          }
+          return res.json()
+        })
+        .then(beans => {
+          console.log(beans)
+          this.setState({
+            beans,
+            error: null,
+        })})
+        .catch(error => {
+          console.error(error)
+          this.setState({ error })
+        })   
+      }
+  }
+
+  fetchBeanByUser = () => {
+    fetch(`${config.API_ENDPOINT}/userbean`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_KEY}`
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
       .then(res => {
@@ -62,19 +113,17 @@ export default class App extends React.Component {
         }
         return res.json()
       })
-      .then(beans => {
-        console.log(beans)
+      .then(beans => 
         this.setState({
           beans,
           error: null,
-      })})
+      }))
       .catch(error => {
         console.error(error)
         this.setState({ error })
-      })   
+      })
   }
 
-  //do I also need to add JWT user data to state here?
 
 
   handleLoginSuccess = () => {
@@ -98,6 +147,7 @@ export default class App extends React.Component {
     const contextValue = {
       beans: this.state.beans,
       fetchBeansByFlavorId: this.fetchBeansByFlavorId,
+      fetchBeanByUser: this.fetchBeanByUser,
     }
 
     return (

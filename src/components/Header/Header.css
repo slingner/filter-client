@@ -2,15 +2,25 @@
 
 @import url('https://fonts.googleapis.com/css?family=Delius&display=swap');
 
-.Header__logged-in > Link, .Header__not-logged-in > Link {
+.Header {
   margin-top: 15px;
   text-decoration: none;
   display: flex;
-  justify-self: flex-end;
+  justify-content: flex-start;
+  margin-right: 60px;
+}
+
+.Header__logged-in {
+  
+}
+
+.Header__not-logged-in {
+  
 }
 
 .nav-title{
-  margin-left: 15px;
+  display: flex;
+  justify-content: left;
   margin-right: auto;
   font-family: 'Delius', cursive;
   font-size: 40px;

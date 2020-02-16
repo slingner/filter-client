@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+/* To hide the checkbox */
+#hamburger-menu-toggle-1 {
+  display: none;
+}
+
+/* Styles for the 'open' state, if the checkbox is checked */
+#hamburger-menu-toggle-1:checked ~ .sidebar {
+  display: initial;
+  /* see Step 3 for the rest of the styles */
+}
+
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+  .menu-toggle {
+    display: initial; /* display the toggle, previously hidden */
+  }
+}

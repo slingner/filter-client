@@ -39,6 +39,8 @@ export default class BeanPage extends React.Component {
   }
 
   render() {
+
+  
     return (
           <div className='Bean'>
             <h3 className='Bean_name'>
@@ -60,6 +62,7 @@ export default class BeanPage extends React.Component {
              Flavor Notes: {this.props.flavor_notes}
             </p>
             <button className='save' onClick={() => this.handleSaveCardClick((this.props.id))}>Save</button>
+            
           </div>
         )}
   }

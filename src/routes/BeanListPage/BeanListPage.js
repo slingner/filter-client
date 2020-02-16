@@ -24,7 +24,6 @@ export default class BeanListPage extends Component {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_KEY}`
       }
     })
       .then(res => {
@@ -67,6 +66,8 @@ export default class BeanListPage extends Component {
   render() {
     const { beans } = this.context
     const { flavors } = this.state
+
+
 
     return (
       <section className='BeanList'>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import BeansListContext from '../../contexts/BeansListContext';
 // import FilterApiService from '..//../services/filter-api-service'
-import BeanCard from '../BeanCard/BeanCard';
+import UserBeanCard from '../UserBeanCard/UserBeanCard';
 import './UserPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
@@ -9,7 +9,6 @@ import TokenService from '../../services/token-service';
 
 export default class BeanListPage extends Component {
   state = {
-    beans: [],
     flavors: [],
     flavorsSelected: new Map(),
     BeanPage: false,
@@ -19,11 +18,11 @@ export default class BeanListPage extends Component {
   static contextType = BeansListContext;
 
   componentDidMount() {
+    this.context.fetchBeanByUser();
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${config.API_KEY}`
       }
     })
       .then(res => {
@@ -35,30 +34,6 @@ export default class BeanListPage extends Component {
       .then(flavors => 
         this.setState({
           flavors,
-          error: null,
-      }))
-      .catch(error => {
-        console.error(error)
-        this.setState({ error })
-      })
-    
-    
-    fetch(`${config.API_ENDPOINT}/userbean`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-        'Authorization': `bearer ${TokenService.getAuthToken()}`
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(error => Promise.reject(error))
-        }
-        return res.json()
-      })
-      .then(beans => 
-        this.setState({
-          beans,
           error: null,
       }))
       .catch(error => {
@@ -85,12 +60,12 @@ export default class BeanListPage extends Component {
       return val[0]
     })
     console.log(array)
-    this.context.fetchBeansByFlavorId(array)
+    this.context.fetchBeansByFlavorId(array, true)
   }
   
 
   render() {
-    const { beans } = this.state
+    const { beans } = this.context
     const { flavors } = this.state
 
     return (
@@ -108,9 +83,10 @@ export default class BeanListPage extends Component {
           <h2>Your Saved Beans</h2>
               {beans.map((bean, idx) => {
                   return (
-                  <BeanCard
+                  <UserBeanCard
                     key={idx}
                     {...bean}
+                    beansState={this.context.beans}
                   />
                   )
                 })
