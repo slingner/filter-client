@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import BeansListContext from '../../contexts/BeansListContext';
 // import FilterApiService from '..//../services/filter-api-service'
 import BeanCard from '../BeanCard/BeanCard';
-// import FilterFlavorNoteOptions from '../../components/FilterFlavorNoteOptions/FilterFlavorNoteOptions';
 import './UserPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
-
+import TokenService from '../../services/token-service';
 
 export default class BeanListPage extends Component {
   state = {
-    // beans: [],
+    beans: [],
     flavors: [],
     flavorsSelected: new Map(),
     BeanPage: false,
@@ -42,7 +41,32 @@ export default class BeanListPage extends Component {
         console.error(error)
         this.setState({ error })
       })
+    
+    
+    fetch(`${config.API_ENDPOINT}/userbean`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+      .then(res => {
+        if (!res.ok) {
+          return res.json().then(error => Promise.reject(error))
+        }
+        return res.json()
+      })
+      .then(beans => 
+        this.setState({
+          beans,
+          error: null,
+      }))
+      .catch(error => {
+        console.error(error)
+        this.setState({ error })
+      })
   }
+  
 
   handleChange = (e) => {
     const item = e.target.id;
@@ -66,7 +90,7 @@ export default class BeanListPage extends Component {
   
 
   render() {
-    const { beans } = this.context
+    const { beans } = this.state
     const { flavors } = this.state
 
     return (
