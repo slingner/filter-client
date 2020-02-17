@@ -45,11 +45,9 @@ export default class BeanPage extends React.Component {
   
     return (
           <div className='Bean'>
-            <Link className='bean-page-link' to={`/beans/${this.props.id}`} >
               <h3 className='Bean_name'>
               {this.props.bean_name}
               </h3>
-            </Link>
             <p className='Bean_origin'>
              Origin: {this.props.bean_origin}
             </p>

@@ -26,6 +26,7 @@ export default class App extends React.Component {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
+        'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
       .then(res => {
@@ -46,30 +47,30 @@ export default class App extends React.Component {
   }
 
 
-  fetchSingleBean = () => {
-    const { beanId } = this.props.match.params
-    fetch(`${config.API_ENDPOINT}/beans/${beanId}`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-      }
-    })
-      .then(res => {
-        if (!res.ok) {
-          return res.json().then(error => Promise.reject(error))
-        }
-        return res.json()
-      })
-      .then(beans => 
-        this.setState({
-          beans,
-          error: null,
-      }))
-      .catch(error => {
-        console.error(error)
-        this.setState({ error })
-      })
-  }
+  // fetchSingleBean = () => {
+  //   const { beanId } = this.props.match.params
+  //   fetch(`${config.API_ENDPOINT}/beans/${beanId}`, {
+  //     method: 'GET',
+  //     headers: {
+  //       'content-type': 'application/json',
+  //     }
+  //   })
+  //     .then(res => {
+  //       if (!res.ok) {
+  //         return res.json().then(error => Promise.reject(error))
+  //       }
+  //       return res.json()
+  //     })
+  //     .then(beans => 
+  //       this.setState({
+  //         beans,
+  //         error: null,
+  //     }))
+  //     .catch(error => {
+  //       console.error(error)
+  //       this.setState({ error })
+  //     })
+  // }
 
 
 
@@ -79,6 +80,7 @@ export default class App extends React.Component {
         method: 'GET',
         headers: {
           'content-type': 'application/json',
+          'Authorization': `Bearer ${TokenService.getAuthToken()}`
         }
       })
         .then(res => {
@@ -203,10 +205,10 @@ export default class App extends React.Component {
                       path={'/account'} 
                       component={UserPage}
                     />
-                    <PrivateRoute
+                    {/* <PrivateRoute
                       path={'/beans/:beanId'} 
-                      component={BeanPage}
-                    />
+                      component={UserBeanCard}
+                    /> */}
                      <Route
                       component={NotFoundPage}
                     />
