@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import './UserBeanCard.css'
 import config from '../../config';
 import TokenService from '../../services/token-service';
+import BeansListContext from '../../contexts/BeansListContext';
 
 export default class BeanPage extends React.Component {
 
@@ -10,7 +11,7 @@ export default class BeanPage extends React.Component {
     beans: [],
   }
 
-  
+  static contextType = BeansListContext;
 
   // postBeanIdOnUserTable = (beanId) => {
   //   return fetch(`${config.API_ENDPOINT}/beans`, {
@@ -39,14 +40,14 @@ export default class BeanPage extends React.Component {
   //   console.log(id)
   // }
 
-  deleteHandleBean = (id) =>{
-    const newBeans = this.props.beansState.filter(beans =>
+  deleteBean = (id) =>{
+    const newBeans = this.props.userBeans.filter(beans =>
     beans.id !== id
     )
     this.setState({
       beans: newBeans,
     })
-    return fetch(`${config.API_ENDPOINT}/users`, {
+    return fetch(`${config.API_ENDPOINT}/userbean/${id}`, {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
@@ -59,14 +60,12 @@ export default class BeanPage extends React.Component {
           throw error
         })
       }
-      return res.json()
+      this.context.fetchBeanByUser();
     })
     .catch(error => {
       console.error(error)
     })
-    
   }
-
 
 
   render() {
@@ -90,7 +89,7 @@ export default class BeanPage extends React.Component {
             <p className='flavor_notes'>
              Flavor Notes: {this.props.flavor_notes}
             </p>
-            <button className='save' onClick={() => this.deleteHandleBean(this.props.id)}>Delete</button>
+            <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete</button>
           </div>
         )}
   }

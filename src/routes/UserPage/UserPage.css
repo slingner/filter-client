@@ -1,0 +1,14 @@
+.beanlist-header {
+  text-align: center;
+  padding: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  color: rgb(110, 147, 115);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.beanlist {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+} 

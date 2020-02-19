@@ -1,23 +1,36 @@
+/* .checkbox_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+} */
+
+
 .checkbox {
+  display: flex;
+  justify-content: left;
   font-family: 'Montserrat', sans-serif;
-  min-height: 20px;
-  font-size: 16px;
-  
+  font-size: 15px;
+  padding-left: 30px;
+ 
 }
 
 input[type=checkbox] {
+  display: inline-block;
   width: 8px;  
   height: 8px;  
   vertical-align: middle;
   margin-right: 8px;    
-  padding:8px;
+  padding: 8px;
   margin-bottom: 12px;
 }
 
 .FlavorFilter {
   text-align: left;
-  padding-top: 2px;
-  font-size: 25px;
+  padding: 10px;
+  padding-left: 30px;
+  font-size: 20px;
+  font-weight: 900;
   color: rgb(96, 90, 90);
   font-family: 'Montserrat', sans-serif;
 } 

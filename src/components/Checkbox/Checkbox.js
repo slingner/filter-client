@@ -48,7 +48,7 @@ export default class CheckBox extends React.Component {
 
     return (
       <div className='checkbox_container'>
-        <h3 className='FlavorFilter'>Flavor Filter</h3>
+        <div className='FlavorFilter'>Flavor Filter</div>
           { flavorName }  
       </div>
     )

@@ -3,13 +3,13 @@ import PropTypes from 'prop-types'
 import './BeanCard.css'
 import config from '../../config';
 import TokenService from '../../services/token-service';
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 
 export default class BeanPage extends React.Component {
 
   state = {
-    beanUser:null
+    beanUser:null, 
   }
 
   postBeanIdOnUserTable = (beanId) => {
@@ -34,19 +34,23 @@ export default class BeanPage extends React.Component {
       })   
   }
 
-
   handleSaveCardClick = (id) => {
     this.postBeanIdOnUserTable(id)
     console.log(id)
   }
 
   render() {
+    let saved;
+    if(this.props.userBeans.includes(this.props.id)) {
+      saved = 'Saved to your account!'
+    } else {
+      saved= 'Save To Account'
+    }
 
-  
     return (
           <div className='Bean'>
               <h3 className='Bean_name'>
-              {this.props.bean_name}
+                {this.props.bean_name}
               </h3>
             <p className='Bean_origin'>
              Origin: {this.props.bean_origin}
@@ -64,10 +68,11 @@ export default class BeanPage extends React.Component {
              Flavor Notes: {this.props.flavor_notes}
             </p>
             {TokenService.hasAuthToken()
-            ? <button className='save' onClick={() => this.handleSaveCardClick((this.props.id))}>Save</button>
+             ? <button className='save' onClick={() => {
+               this.handleSaveCardClick((this.props.id))
+              }}>{saved}</button>
             : ''}
-            
-            
+
           </div>
         )}
   }

@@ -1,30 +1,67 @@
-.wrapper {
+
+.HomePage-wrapper{
   display: flex;
-  align-items: stretch;
-  min-height: 100vh;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-/* To hide the checkbox */
-#hamburger-menu-toggle-1 {
-  display: none;
-}
-
-/* Styles for the 'open' state, if the checkbox is checked */
-#hamburger-menu-toggle-1:checked ~ .sidebar {
-  display: initial;
-  /* see Step 3 for the rest of the styles */
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(130, 114, 93);
+  margin-bottom: 90px;
 }
 
 
-@media (max-width: 767px) {
-  .sidebar {
-    display: none;
+
+.main {
+  max-width: 60%;
+}
+
+.bean-in-hand-img {
+  width: 100%;
+  -webkit-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  -moz-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  border-radius: 5px;
+}
+
+.screenshot-saved-bean-img {
+  border: 1px solid grey;
+  width: 100%;
+  -webkit-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  -moz-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  border-radius: 5px;
+}
+
+.coffee-filter-img {
+  border: 1px solid grey;
+  width: 100%;
+  -webkit-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  -moz-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  border-radius: 5px;
+}
+
+.coffee-froth-img {
+  border: 1px solid grey;
+  width: 100%;
+  -webkit-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  -moz-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  border-radius: 5px;
+}
+
+.Links{
+  text-decoration: none;
+  color: rgb(105, 146, 105);
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    max-width: 85%;
   }
-  .menu-toggle {
-    display: initial; /* display the toggle, previously hidden */
+
+  .Links{
+    text-decoration: none;
+    list-style-type: none;
   }
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import { Section } from '../../components/Utils/Utils'
+import './LoginPage.css'
 
 export default class LoginPage extends Component {
   static defaultProps = {
@@ -21,7 +22,7 @@ export default class LoginPage extends Component {
   render() {
     return (
       <Section className='LoginPage'>
-        <h2>Login</h2>
+        <h2 className='login-header'><span aria-label='coffee-emoji' role='img'>☕</span> Login <span aria-label='coffee-emoji' role='img'>☕</span></h2>
         <LoginForm
           onLoginSuccess={this.handleLoginSuccess}
         />

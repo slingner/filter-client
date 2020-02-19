@@ -20,6 +20,8 @@ export default class BeanListPage extends Component {
   static contextType = BeansListContext;
 
   componentDidMount() {
+    console.log("LIST PAGE - EVERY TIME YOU GO BACK TO LIST")
+    this.context.fetchAllBeans();
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',
       headers: {
@@ -32,11 +34,12 @@ export default class BeanListPage extends Component {
         }
         return res.json()
       })
-      .then(flavors => 
+      .then(flavors => {
         this.setState({
           flavors,
           error: null,
-      }))
+        })
+      })
       .catch(error => {
         console.error(error)
         this.setState({ error })
@@ -67,29 +70,31 @@ export default class BeanListPage extends Component {
     const { beans } = this.context
     const { flavors } = this.state
 
-
-
     return (
       <section className='BeanList'>
-        <div>
+        <div className='checkbox-wrapper'>
             <CheckBox 
               handleChange={this.handleChange}
               checked={this.state.flavorsSelected.get(flavors.flavor_name)}
               handleClick={this.handleClick}
             />    
+            <button className='submit-button' onClick={this.handleClick}>Refresh List</button>
         </div>
-        <button className='button' onClick={this.handleClick}>Submit</button>
-        <div className='BookmarkList__list' aria-live='polite'>
-          <h2>List of Beans</h2>
+        
+        <div className='beanlist-wrapper' aria-live='polite'>
+          <header className='beanlist-header'>LIST OF BEANS</header>
+            <div className='beanlist'>
               {beans.map((bean, idx) => {
                   return (
                   <BeanCard
                     key={idx}
                     {...bean}
+                    userBeans={this.context.userBeans}
                   />
                   )
                 })
               }
+            </div>
         </div>
       </section>
     )

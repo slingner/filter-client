@@ -1,56 +1,59 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './Header.css'
+import TokenService from '../../services/token-service'
 
 class Header extends Component {
 
 
   renderLogoutLink = () => {
-    
+
     return (
-      <div className='Header__logged-in'>
-      
-        <Link
+      <>
+        <NavLink className='Links'
+          to='/BeanList'>
+          All Beans
+        </NavLink>
+        <NavLink className='Links'
+          to='/Account'>
+          Your Beans
+        </NavLink>
+        <NavLink className='Links'
           onClick={this.props.logoutClick}
           to='/'>
           Logout
-        </Link>
-        <Link
-          to='/Account'>
-          Account
-        </Link>
-      </div>
+        </NavLink>
+      </>
     )
   }
 
   renderLoginLink = () => {
     return (
-      <div className='Header__not-logged-in'>
-        <Link 
-          to='/about'>
-          About
-        </Link>
-        <Link
-          to='/login'>
-          Log in
-        </Link>
-        <Link
-          to='/register'>
-          Register
-        </Link>
-      </div>
+      <>
+          <NavLink className='Links'
+            to='/BeanList'>
+            All Beans
+          </NavLink>
+          <NavLink className='Links'
+            to='/login'>
+            Log in
+          </NavLink>
+          <NavLink className='Links'
+            to='/register'>
+            Register
+          </NavLink>
+      </>
     )
   }
 
   render() {
  
-
     return <>
-      <nav className='Header'>
-        <h1>
-        <Link to={'/'} className='nav-title'>FILTER</Link>
-        </h1>
-        {this.props.isAuthenticated
+      <header>
+        <NavLink to={'/'} className='nav-title'>FILTER</NavLink>
+      </header>
+      <nav className='nav-bar'>
+        {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
       </nav>

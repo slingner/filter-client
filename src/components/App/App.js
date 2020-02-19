@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import Header from '../Header/Header';
 import PrivateRoute from '../Utils/PrivateRoute';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
-import Homepage from '../../routes/HomePage/HomePage'
+import HomePage from '../../routes/HomePage/HomePage'
 import BeanListPage from '../../routes/BeanListPage/BeanListPage';
-import BeanPage from '../../routes/BeanCard/BeanCard';
+// import BeanPage from '../../routes/BeanCard/BeanCard';
 import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import UserPage from '../../routes/UserPage/UserPage';
@@ -17,16 +17,20 @@ import './App.css';
 export default class App extends React.Component {
   state = {
     beans: [],
+    userBeans: [],
     error: null, 
     isAuthenticated: false
   };
 
   componentDidMount() {
+    console.log("TOP LEVEL - ONLY ONCE")
+  }
+
+  fetchAllBeans = () => {
     fetch(`${config.API_ENDPOINT}/beans`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
       .then(res => {
@@ -35,44 +39,17 @@ export default class App extends React.Component {
         }
         return res.json()
       })
-      .then(beans => 
+      .then(beans =>
         this.setState({
           beans,
           error: null,
-      }))
+        })
+      )
       .catch(error => {
         console.error(error)
         this.setState({ error })
       })
   }
-
-
-  // fetchSingleBean = () => {
-  //   const { beanId } = this.props.match.params
-  //   fetch(`${config.API_ENDPOINT}/beans/${beanId}`, {
-  //     method: 'GET',
-  //     headers: {
-  //       'content-type': 'application/json',
-  //     }
-  //   })
-  //     .then(res => {
-  //       if (!res.ok) {
-  //         return res.json().then(error => Promise.reject(error))
-  //       }
-  //       return res.json()
-  //     })
-  //     .then(beans => 
-  //       this.setState({
-  //         beans,
-  //         error: null,
-  //     }))
-  //     .catch(error => {
-  //       console.error(error)
-  //       this.setState({ error })
-  //     })
-  // }
-
-
 
   fetchBeansByFlavorId = (arrayOfIds, isFromUser) => {
     if(!isFromUser) {
@@ -113,10 +90,10 @@ export default class App extends React.Component {
           }
           return res.json()
         })
-        .then(beans => {
-          console.log(beans)
+        .then(userBeans => {
+          console.log(userBeans)
           this.setState({
-            beans,
+            userBeans,
             error: null,
         })})
         .catch(error => {
@@ -140,9 +117,9 @@ export default class App extends React.Component {
         }
         return res.json()
       })
-      .then(beans => 
+      .then(userBeans => 
         this.setState({
-          beans,
+          userBeans,
           error: null,
       }))
       .catch(error => {
@@ -166,9 +143,13 @@ export default class App extends React.Component {
     })
   }
 
+  
+
   render(){
     const contextValue = {
+      fetchAllBeans: this.fetchAllBeans,
       beans: this.state.beans,
+      userBeans: this.state.userBeans,
       fetchBeansByFlavorId: this.fetchBeansByFlavorId,
       fetchBeanByUser: this.fetchBeanByUser,
       fetchSingleBean: this.fetchSingleBean
@@ -184,12 +165,12 @@ export default class App extends React.Component {
             {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
                 <Switch>
                     <Route
-                      exact
+                    exact
                       path={'/'}
-                      component={BeanListPage}
+                      component={HomePage}
                     />
                     <Route
-                      path={'/home'}
+                      path={'/BeanList'}
                       component={BeanListPage}
                     />
                     <PublicOnlyRoute

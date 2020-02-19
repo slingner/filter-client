@@ -16,8 +16,8 @@ export default class BeanListPage extends Component {
   };
 
   static contextType = BeansListContext;
-
   componentDidMount() {
+    console.log("USER PAGE - EVERY TIME YOU GO BACK TO ACCOUNT")
     this.context.fetchBeanByUser();
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',
@@ -65,32 +65,36 @@ export default class BeanListPage extends Component {
   
 
   render() {
-    const { beans } = this.context
+    const { userBeans } = this.context
     const { flavors } = this.state
 
     return (
       <section className='BeanList'>
-        <ul>
-          
+        <div>
             <CheckBox 
               handleChange={this.handleChange}
               checked={this.state.flavorsSelected.get(flavors.flavor_name)}
               handleClick={this.handleClick}
             />    
-        </ul>
-        <button className='button' onClick={this.handleClick}>Submit</button>
+            <button className='submit-button' onClick={this.handleClick}>Refresh List</button>
+        </div>
+        
         <div className='BookmarkList__list' aria-live='polite'>
-          <h2>Your Saved Beans</h2>
-              {beans.map((bean, idx) => {
+          <header className='beanlist-header'>YOUR SAVED BEANS</header>
+          <div className='beanlist'>
+              {userBeans.map((bean, idx) => {
                   return (
                   <UserBeanCard
                     key={idx}
                     {...bean}
-                    beansState={this.context.beans}
+                    userBeans={this.context.userBeans}
+                    beans={this.context.beans}
+
                   />
                   )
                 })
               }
+          </div>
         </div>
       </section>
     )

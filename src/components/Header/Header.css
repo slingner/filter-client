@@ -2,60 +2,62 @@
 
 @import url('https://fonts.googleapis.com/css?family=Delius&display=swap');
 
-.Header {
-  margin-top: 15px;
-  text-decoration: none;
-  display: flex;
-  justify-content: flex-start;
-  margin-right: 60px;
-}
 
-.Header__logged-in {
-  
-}
-
-.Header__not-logged-in {
-  
-}
-
-.nav-title{
+.nav-bar >  {
+  color: black;
   display: flex;
   justify-content: left;
   margin-right: auto;
-  font-family: 'Delius', cursive;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Montserrat';
+}
+
+.nav-bar .Links {
+  text-decoration: none;
+  list-style-type: none;
+  color: rgb(90, 90, 90);
+  padding: 15px;
+}
+
+.Links:hover {
+  cursor: pointer;
+  color: rgb(227, 161, 85);
+}
+
+.nav-title {
+  text-decoration: none;
+  color: rgb(90, 90, 90);
+  font-family: 'Delius';
   font-size: 40px;
-  list-style-type: none;
-  color: inherit;
-  text-decoration: none;
 }
 
-.nav-about, .nav-profile, .Header__logged-in, .Header__not-logged-in {
-  font-family: 'Montserrat', sans-serif;
-  list-style-type: none;
-  color: inherit;
-  text-decoration: none;
-  padding: 15px 15px;
+.nav-title:hover {
+  cursor: pointer;
+  color: rgb(110, 147, 115);
+  font-size: 45px;
 }
 
-.nav-title:hover, .nav-profile:hover, .nav-signup:hover, .nav-login:hover {
-  color: rgba(199, 169, 67, 0.824);
-} 
 
-@media all and (max-width: 600px) {
-  .App__nav {
-    flex-wrap: wrap;
+@media screen and (max-width: 600px) {
+  .Links {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(197, 205, 187);
+    margin: 5px;
+    border-radius: 2px;
+    padding: 1px;
   }
-  .App__nav > Link {
-    flex: 1 1 50%;
-  }
-  
-}
 
-@media all and (max-width: 400px) {
-  .App__nav {
-    flex-wrap: wrap;
+  .nav-bar {
+    margin-top: 5px;
+    min-width: 40%;
   }
-  .App__nav > Link {
-    flex: 1 1 50%;
+
+  .nav-title {
+    display: block;
+    margin-top: 10px;
+    font-size: 40px;
   }
+
 }
