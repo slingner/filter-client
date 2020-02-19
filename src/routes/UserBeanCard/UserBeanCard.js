@@ -4,6 +4,7 @@ import './UserBeanCard.css'
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import BeansListContext from '../../contexts/BeansListContext';
+import FilterApiService from '../../services/filter-api-service';
 
 export default class BeanPage extends React.Component {
 
@@ -13,32 +14,29 @@ export default class BeanPage extends React.Component {
 
   static contextType = BeansListContext;
 
-  // postBeanIdOnUserTable = (beanId) => {
-  //   return fetch(`${config.API_ENDPOINT}/beans`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json',
-  //       'authorization': `bearer ${TokenService.getAuthToken()}`
-  //     },
-  //     body: JSON.stringify({
-  //       coffee_bean_id: beanId
-  //     }),
-  //   })
-  //     .then(res =>
-  //       (!res.ok)
-  //         ? res.json().then(e => Promise.reject(e))
-  //         : res.json()
-  //     )
-  //     .catch(error => {
-  //       console.error(error)
-  //       this.setState({ error })
-  //     })   
-  // }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    // const { userBeans } = this.context
+    const { text } = e.target
+    const { userBeans } = this.context
 
-  // handleSaveCardClick = (id) => {
-  //   this.postBeanIdOnUserTable(id)
-  //   console.log(id)
-  // }
+    FilterApiService.postReview(userBeans.id, text)
+      .then(res=>{
+        if(res.ok){
+          return res.json()
+        }
+        else {
+          throw new Error('Response not okay')
+        }
+      })
+      .then(data => {
+        this.context.addNote(data)
+      })
+
+      .catch(err => {
+        console.error(err);
+      })
+  }
 
   deleteBean = (id) =>{
     const newBeans = this.props.userBeans.filter(beans =>
@@ -89,6 +87,18 @@ export default class BeanPage extends React.Component {
             <p className='flavor_notes'>
              Flavor Notes: {this.props.flavor_notes}
             </p>
+            <form  className='reviewSubmit' onSubmit={this.handleSubmit}>
+              <textarea 
+              aria-label='Comment about this bean...'
+              name='text'
+              id={this.props.id}
+              cols='45'
+              rows='3'
+              placeholder='Comment about this bean..'
+              className="inputAboutBean">
+              </textarea>
+              <button type='submit'>Submit Comment</button>
+            </form>
             <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete</button>
           </div>
         )}

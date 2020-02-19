@@ -4,6 +4,7 @@ import './BeanCard.css'
 import config from '../../config';
 import TokenService from '../../services/token-service';
 // import { Link } from 'react-router-dom'
+import BeansListContext from '../../contexts/BeansListContext';
 
 
 export default class BeanPage extends React.Component {
@@ -12,12 +13,14 @@ export default class BeanPage extends React.Component {
     beanUser:null, 
   }
 
+  static contextType = BeansListContext;
+
   postBeanIdOnUserTable = (beanId) => {
     return fetch(`${config.API_ENDPOINT}/beans`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`
+        'authorization': `Bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
         coffee_bean_id: beanId
@@ -28,6 +31,7 @@ export default class BeanPage extends React.Component {
           ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
+      .then(() => this.context.fetchBeanByUser())
       .catch(error => {
         console.error(error)
         this.setState({ error })
@@ -39,14 +43,22 @@ export default class BeanPage extends React.Component {
     console.log(id)
   }
 
-  render() {
-    let saved;
-    if(this.props.userBeans.includes(this.props.id)) {
-      saved = 'Saved to your account!'
-    } else {
-      saved= 'Save To Account'
-    }
+  showSavedStatus = () => {
+    console.log(this.props.userBeans);
+    console.log(this.props.id)
+    let arrayOfIds = this.props.userBeans.map( x => x.id )
+    const saved = arrayOfIds.includes(this.props.id)
 
+    return (
+      saved ? <span>{'Added to favorites'}</span> : 
+      <button className='save' onClick={() => {
+        this.handleSaveCardClick((this.props.id))
+      }}>Add to favorites</button>
+    )
+  }
+
+  render() {
+    
     return (
           <div className='Bean'>
               <h3 className='Bean_name'>
@@ -67,11 +79,7 @@ export default class BeanPage extends React.Component {
             <p className='flavor_notes'>
              Flavor Notes: {this.props.flavor_notes}
             </p>
-            {TokenService.hasAuthToken()
-             ? <button className='save' onClick={() => {
-               this.handleSaveCardClick((this.props.id))
-              }}>{saved}</button>
-            : ''}
+            {TokenService.hasAuthToken() ? this.showSavedStatus() : ''}
 
           </div>
         )}

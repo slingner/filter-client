@@ -13,3 +13,9 @@
   max-width: 300px;
   min-height: 300px;
 }
+
+.inputAboutBean {
+  border-radius: 5px;
+  padding: 5px;
+  border-color: rgb(130, 114, 93);
+}

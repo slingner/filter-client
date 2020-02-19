@@ -19,7 +19,8 @@ export default class App extends React.Component {
     beans: [],
     userBeans: [],
     error: null, 
-    isAuthenticated: false
+    isAuthenticated: false, 
+    reviews: null
   };
 
   componentDidMount() {
@@ -143,6 +144,12 @@ export default class App extends React.Component {
     })
   }
 
+  addBean = (value) => {
+    this.setState({
+      reviews: [...this.state.reviews, value]
+    })
+  }
+
   
 
   render(){
@@ -152,7 +159,8 @@ export default class App extends React.Component {
       userBeans: this.state.userBeans,
       fetchBeansByFlavorId: this.fetchBeansByFlavorId,
       fetchBeanByUser: this.fetchBeanByUser,
-      fetchSingleBean: this.fetchSingleBean
+      fetchSingleBean: this.fetchSingleBean,
+      addBean: this.addBean
     }
 
     return (

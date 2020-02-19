@@ -5,7 +5,7 @@ import UserBeanCard from '../UserBeanCard/UserBeanCard';
 import './UserPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
-import TokenService from '../../services/token-service';
+// import TokenService from '../../services/token-service';
 
 export default class BeanListPage extends Component {
   state = {
