@@ -144,17 +144,19 @@ export default class App extends React.Component {
   }
 
   addReview = review => {
-    // console.log('review: ', review);
+    console.log('review: ', review);
     this.setState({
       reviews: this.state.reviews.concat(review)
-    })
-    //, () => console.log('this.state.reviews:', this.state.reviews)
+    }, () => console.log('this.state.reviews:', this.state.reviews)) 
   }
 
 
   setError = error => {
     console.error(error)
     this.setState({ error })
+  }
+  clearError = () => {
+    this.setState({ error: null })
   }
 
   // setReviews = reviews => {
@@ -173,6 +175,7 @@ export default class App extends React.Component {
       fetchSingleBean: this.fetchSingleBean,
       addReview: this.addReview,
       setError: this.setError,
+      clearError: this.clearError,
       setReviews: this.setReviews
     }
 

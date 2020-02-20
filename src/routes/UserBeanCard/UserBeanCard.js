@@ -22,9 +22,10 @@ export default class BeanPage extends React.Component {
     e.preventDefault()
     const { text } = e.target
     FilterApiService.postReview(text.value, this.props.id)
-      // .then(this.context.addReview)
-      .then(()=> {
-        text.value = ''
+      .then((res)=> {
+        console.log(res)
+        text.value = '';
+        this.context.addReview(res)  //add this
       })
       .catch(err => {
         console.error(err);
@@ -64,18 +65,9 @@ export default class BeanPage extends React.Component {
   render() {
 
   let reviews = this.context.reviews
-
+    console.log(reviews)
   let review = reviews.filter(review => review.coffee_bean_id === this.props.id)
   let text = review.map((text, index) => <li key={index}>{text.text}</li>)
-
-  // console.log(reviews)
-  // let filterReviewsId = reviews.map(x => x.coffee_bean_id)
-  // let filterReviewsText = reviews.map(x => x.text)
-  // // console.log(filterReviewsId)
-  // let filterText = filterReviewsText.toString()
-  // // console.log(matchIds)
-
-
 
     return (
           <div className='Bean'>
