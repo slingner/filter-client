@@ -58,19 +58,19 @@ export default class BeanPage extends React.Component {
     })
   }
 
-  getTextFromReview = () => {
-    // let review = this.context.reviews.map(a => a.text)
-    // console.log(review)
-    let reviews = this.context.reviews.filter(review => review.id === this.props.id  ? review : '')
-    
-
-  }
-
-
   render() {
-   
-    console.log(this.getTextFromReview())
 
+    let reviews = this.context.reviews
+    console.log(this.context.reviews)
+  //   for (var key in reviews) {
+  //     console.log(reviews[key].id);
+  // }
+//   let reviewId = reviews.forEach(function (o) {
+//     Object.values(o).forEach(function (k) {
+//         console.log(k, o[k]); // show key and value
+//     });
+// });
+    
     return (
           <div className='Bean'>
             <h3 className='Bean_name'>

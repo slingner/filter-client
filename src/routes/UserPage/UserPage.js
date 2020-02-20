@@ -73,8 +73,6 @@ export default class BeanListPage extends Component {
   render() {
     const { userBeans } = this.context
     const { flavors } = this.state
-    // let arrayOfReviewText = this.context.reviews.map(a => a.text)
-    // console.log(arrayOfReviewText)
    
     return (
       <section className='BeanList'>
