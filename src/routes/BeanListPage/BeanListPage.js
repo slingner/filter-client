@@ -20,8 +20,7 @@ export default class BeanListPage extends Component {
   static contextType = BeansListContext;
 
   componentDidMount() {
-    this.context.fetchBeanByUser();
-    console.log("LIST PAGE - EVERY TIME YOU GO BACK TO LIST")
+    // this.context.fetchBeanByUser();
     this.context.fetchAllBeans();
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',
@@ -63,7 +62,6 @@ export default class BeanListPage extends Component {
     }).map(val => {
       return val[0]
     })
-    console.log(array)
     this.context.fetchBeansByFlavorId(array)
   }
 

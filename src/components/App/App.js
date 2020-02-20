@@ -23,10 +23,6 @@ export default class App extends React.Component {
     reviews: []
   };
 
-  componentDidMount() {
-    console.log("TOP LEVEL - ONLY ONCE")
-  }
-
   fetchAllBeans = () => {
     fetch(`${config.API_ENDPOINT}/beans`, {
       method: 'GET',
@@ -68,7 +64,6 @@ export default class App extends React.Component {
           return res.json()
         })
         .then(beans => {
-          console.log(beans)
           this.setState({
             beans,
             error: null,
@@ -144,10 +139,9 @@ export default class App extends React.Component {
   }
 
   addReview = review => {
-    console.log('review: ', review);
     this.setState({
       reviews: this.state.reviews.concat(review)
-    }, () => console.log('this.state.reviews:', this.state.reviews)) 
+    }) 
   }
 
 

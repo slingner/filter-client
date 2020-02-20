@@ -18,7 +18,6 @@ export default class BeanListPage extends Component {
 
   static contextType = BeansListContext;
   componentDidMount() {
-    console.log("USER PAGE - EVERY TIME YOU GO BACK TO ACCOUNT")
     this.context.fetchBeanByUser();
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',
@@ -66,7 +65,7 @@ export default class BeanListPage extends Component {
     }).map(val => {
       return val[0]
     })
-    console.log(array)
+
     this.context.fetchBeansByFlavorId(array, true)
   }
 

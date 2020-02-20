@@ -23,7 +23,6 @@ export default class BeanPage extends React.Component {
     const { text } = e.target
     FilterApiService.postReview(text.value, this.props.id)
       .then((res)=> {
-        console.log(res)
         text.value = '';
         this.context.addReview(res)  //add this
       })
@@ -65,7 +64,6 @@ export default class BeanPage extends React.Component {
   render() {
 
   let reviews = this.context.reviews
-    console.log(reviews)
   let review = reviews.filter(review => review.coffee_bean_id === this.props.id)
   let text = review.map((text, index) => <li key={index}>{text.text}</li>)
 

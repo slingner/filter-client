@@ -40,12 +40,9 @@ export default class BeanPage extends React.Component {
 
   handleSaveCardClick = (id) => {
     this.postBeanIdOnUserTable(id)
-    console.log(id)
   }
 
   showSavedStatus = () => {
-    console.log(this.props.userBeans);
-    console.log(this.props.id)
     let arrayOfIds = this.props.userBeans.map( x => x.id )
     const saved = arrayOfIds.includes(this.props.id)
 
