@@ -67,7 +67,7 @@ export default class BeanListPage extends Component {
   render() {
     const { userBeans } = this.context
     const { flavors } = this.state
-
+    console.log(this.context.reviews)
     return (
       <section className='BeanList'>
         <div>
@@ -89,7 +89,6 @@ export default class BeanListPage extends Component {
                     {...bean}
                     userBeans={this.context.userBeans}
                     beans={this.context.beans}
-
                   />
                   )
                 })

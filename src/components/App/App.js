@@ -20,11 +20,12 @@ export default class App extends React.Component {
     userBeans: [],
     error: null, 
     isAuthenticated: false, 
-    reviews: null
+    reviews: []
   };
 
   componentDidMount() {
     console.log("TOP LEVEL - ONLY ONCE")
+    console.log(this.state.reviews)
   }
 
   fetchAllBeans = () => {
@@ -91,8 +92,7 @@ export default class App extends React.Component {
           }
           return res.json()
         })
-        .then(userBeans => {
-          console.log(userBeans)
+        .then((userBeans) => {
           this.setState({
             userBeans,
             error: null,
@@ -118,7 +118,7 @@ export default class App extends React.Component {
         }
         return res.json()
       })
-      .then(userBeans => 
+      .then((userBeans) => 
         this.setState({
           userBeans,
           error: null,
@@ -144,23 +144,34 @@ export default class App extends React.Component {
     })
   }
 
-  addBean = (value) => {
+  addReview = review => {
     this.setState({
-      reviews: [...this.state.reviews, value]
+      reviews: [...this.state.reviews, review]
     })
   }
 
+  setError = error => {
+    console.error(error)
+    this.setState({ error })
+  }
+
+  setReviews = reviews => {
+    this.setState({ reviews })
+  }
   
 
   render(){
     const contextValue = {
       fetchAllBeans: this.fetchAllBeans,
       beans: this.state.beans,
+      reviews: this.state.reviews,
       userBeans: this.state.userBeans,
       fetchBeansByFlavorId: this.fetchBeansByFlavorId,
       fetchBeanByUser: this.fetchBeanByUser,
       fetchSingleBean: this.fetchSingleBean,
-      addBean: this.addBean
+      addReview: this.addReview,
+      setError: this.setError,
+      setReviews: this.setReviews
     }
 
     return (
@@ -170,7 +181,7 @@ export default class App extends React.Component {
           </header>
           <BeansListContext.Provider value={contextValue}>
             <main className='App_Main'>
-            {this.state.hasError && <p className='red'>There was an error! Oh no!</p>}
+            {this.state.error && <p className='red'>There was an error! Oh no!</p>}
                 <Switch>
                     <Route
                     exact

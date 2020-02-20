@@ -7,6 +7,9 @@ import BeansListContext from '../../contexts/BeansListContext';
 import FilterApiService from '../../services/filter-api-service';
 
 export default class BeanPage extends React.Component {
+  static defaultProps = {
+    match: { params: {} },
+  }
 
   state = {
     beans: [],
@@ -14,25 +17,22 @@ export default class BeanPage extends React.Component {
 
   static contextType = BeansListContext;
 
+  componentDidMount() {
+    FilterApiService.getBeanReviews()
+      .then(this.context.addReview)
+      .catch(this.context.setError)
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
-    // const { userBeans } = this.context
     const { text } = e.target
-    const { userBeans } = this.context
-
-    FilterApiService.postReview(userBeans.id, text)
-      .then(res=>{
-        if(res.ok){
-          return res.json()
-        }
-        else {
-          throw new Error('Response not okay')
-        }
+    console.log(text.value)
+    console.log(this.props.id)
+    FilterApiService.postReview(text.value, this.props.id)
+      // .then(this.context.addReview)
+      .then(()=> {
+        text.value = ''
       })
-      .then(data => {
-        this.context.addNote(data)
-      })
-
       .catch(err => {
         console.error(err);
       })
@@ -65,8 +65,9 @@ export default class BeanPage extends React.Component {
     })
   }
 
-
   render() {
+    const { reviews } = this.context
+    // console.log(reviews.text)
     return (
           <div className='Bean'>
             <h3 className='Bean_name'>
@@ -89,16 +90,19 @@ export default class BeanPage extends React.Component {
             </p>
             <form  className='reviewSubmit' onSubmit={this.handleSubmit}>
               <textarea 
-              aria-label='Comment about this bean...'
-              name='text'
-              id={this.props.id}
-              cols='45'
-              rows='3'
-              placeholder='Comment about this bean..'
-              className="inputAboutBean">
+                aria-label='Comment about this bean...'
+                name='text'
+                id={this.props.id}
+                cols='45'
+                rows='3'
+                placeholder='Comment about this bean..'
+                className="inputAboutBean">
               </textarea>
               <button type='submit'>Submit Comment</button>
             </form>
+            <p className='reviews'>
+             Reviews: {reviews}
+            </p>
             <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete</button>
           </div>
         )}

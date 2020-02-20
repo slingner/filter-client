@@ -25,28 +25,28 @@ const FilterApiService = {
           : res.json()
       )
   },
-  // getBeanReviews(beanId) {
-  //   return fetch(`${config.API_ENDPOINT}/beans/${beanId}/reviews`, {
-  //     headers: {
-  //       'authorization': `bearer ${TokenService.getAuthToken()}`,
-  //     },
-  //   })
-  //     .then(res =>
-  //       (!res.ok)
-  //         ? res.json().then(e => Promise.reject(e))
-  //         : res.json()
-  //     )
-  // },
-  postReview(beanId, text) {
+  getBeanReviews() {
+    return fetch(`${config.API_ENDPOINT}/reviews`, {
+      headers: {
+        'authorization': `bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then(res =>
+        (!res.ok)
+          ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+  },
+  postReview( text, beanId ) {
     return fetch(`${config.API_ENDPOINT}/reviews`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
       body: JSON.stringify({
-        coffee_bean_id: beanId,
-        text,
+        text: text,
+        coffee_bean_id: beanId
       }),
     })
       .then(res =>
