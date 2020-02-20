@@ -13,7 +13,7 @@ Filter is responsive to any screen size so you can explore your beans on the roa
 
 FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world.
 
-![Bean Closeup](README-asset/coffee3.jpg?raw=true)
+![Bean Closeup](README-asset/coffee4.jpg?raw=true)
 
 Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to register for a new account and begin exploring the collection of all beans [https://filter-app.now.sh/BeanList](https://filter-app.now.sh/BeanList).<br />
 
