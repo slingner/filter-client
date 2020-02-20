@@ -25,7 +25,6 @@ export default class App extends React.Component {
 
   componentDidMount() {
     console.log("TOP LEVEL - ONLY ONCE")
-    console.log(this.state.reviews)
   }
 
   fetchAllBeans = () => {
@@ -155,9 +154,9 @@ export default class App extends React.Component {
     this.setState({ error })
   }
 
-  setReviews = reviews => {
-    this.setState({ reviews })
-  }
+  // setReviews = reviews => {
+  //   this.setState({ reviews })
+  // }
   
 
   render(){

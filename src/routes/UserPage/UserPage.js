@@ -6,6 +6,7 @@ import './UserPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
 // import TokenService from '../../services/token-service';
+import FilterApiService from '../../services/filter-api-service';
 
 export default class BeanListPage extends Component {
   state = {
@@ -40,7 +41,13 @@ export default class BeanListPage extends Component {
         console.error(error)
         this.setState({ error })
       })
+    FilterApiService.getBeanReviews()
+      .then(this.context.addReview)
+      .catch(this.context.setError)
   }
+
+ 
+
   
 
   handleChange = (e) => {
@@ -62,12 +69,13 @@ export default class BeanListPage extends Component {
     console.log(array)
     this.context.fetchBeansByFlavorId(array, true)
   }
-  
 
   render() {
     const { userBeans } = this.context
     const { flavors } = this.state
-    console.log(this.context.reviews)
+    // let arrayOfReviewText = this.context.reviews.map(a => a.text)
+    // console.log(arrayOfReviewText)
+   
     return (
       <section className='BeanList'>
         <div>

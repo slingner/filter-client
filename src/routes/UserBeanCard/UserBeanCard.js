@@ -17,17 +17,10 @@ export default class BeanPage extends React.Component {
 
   static contextType = BeansListContext;
 
-  componentDidMount() {
-    FilterApiService.getBeanReviews()
-      .then(this.context.addReview)
-      .catch(this.context.setError)
-  }
 
   handleSubmit = (e) => {
     e.preventDefault()
     const { text } = e.target
-    console.log(text.value)
-    console.log(this.props.id)
     FilterApiService.postReview(text.value, this.props.id)
       // .then(this.context.addReview)
       .then(()=> {
@@ -65,9 +58,19 @@ export default class BeanPage extends React.Component {
     })
   }
 
+  getTextFromReview = () => {
+    // let review = this.context.reviews.map(a => a.text)
+    // console.log(review)
+    let reviews = this.context.reviews.filter(review => review.id === this.props.id  ? review : '')
+    
+
+  }
+
+
   render() {
-    const { reviews } = this.context
-    // console.log(reviews.text)
+   
+    console.log(this.getTextFromReview())
+
     return (
           <div className='Bean'>
             <h3 className='Bean_name'>
@@ -100,9 +103,9 @@ export default class BeanPage extends React.Component {
               </textarea>
               <button type='submit'>Submit Comment</button>
             </form>
-            <p className='reviews'>
+            {/* <p className='reviews'>
              Reviews: {reviews}
-            </p>
+            </p> */}
             <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete</button>
           </div>
         )}
