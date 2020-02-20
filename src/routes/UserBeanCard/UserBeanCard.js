@@ -58,19 +58,25 @@ export default class BeanPage extends React.Component {
     })
   }
 
+
+
+
   render() {
 
-    let reviews = this.context.reviews
-    console.log(this.context.reviews)
-  //   for (var key in reviews) {
-  //     console.log(reviews[key].id);
-  // }
-//   let reviewId = reviews.forEach(function (o) {
-//     Object.values(o).forEach(function (k) {
-//         console.log(k, o[k]); // show key and value
-//     });
-// });
-    
+  let reviews = this.context.reviews
+
+  let review = reviews.filter(review => review.coffee_bean_id === this.props.id)
+  let text = review.map((text, index) => <li key={index}>{text.text}</li>)
+
+  // console.log(reviews)
+  // let filterReviewsId = reviews.map(x => x.coffee_bean_id)
+  // let filterReviewsText = reviews.map(x => x.text)
+  // // console.log(filterReviewsId)
+  // let filterText = filterReviewsText.toString()
+  // // console.log(matchIds)
+
+
+
     return (
           <div className='Bean'>
             <h3 className='Bean_name'>
@@ -101,12 +107,13 @@ export default class BeanPage extends React.Component {
                 placeholder='Comment about this bean..'
                 className="inputAboutBean">
               </textarea>
-              <button type='submit'>Submit Comment</button>
+              <button type='submit'>Submit Bean Comments</button>
             </form>
-            {/* <p className='reviews'>
-             Reviews: {reviews}
-            </p> */}
-            <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete</button>
+            <p className='reviews'>
+             Reviews: {text}
+            </p>
+      
+            <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete Bean</button>
           </div>
         )}
   }

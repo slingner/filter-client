@@ -144,10 +144,13 @@ export default class App extends React.Component {
   }
 
   addReview = review => {
+    // console.log('review: ', review);
     this.setState({
-      reviews: [...this.state.reviews, review]
+      reviews: this.state.reviews.concat(review)
     })
+    //, () => console.log('this.state.reviews:', this.state.reviews)
   }
+
 
   setError = error => {
     console.error(error)
