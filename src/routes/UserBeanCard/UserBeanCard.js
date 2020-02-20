@@ -24,7 +24,7 @@ export default class BeanPage extends React.Component {
     FilterApiService.postReview(text.value, this.props.id)
       .then((res)=> {
         text.value = '';
-        this.context.addReview(res)  //add this
+        this.context.addReview(res) 
       })
       .catch(err => {
         console.error(err);
@@ -58,9 +58,6 @@ export default class BeanPage extends React.Component {
     })
   }
 
-
-
-
   render() {
 
   let reviews = this.context.reviews
@@ -92,7 +89,7 @@ export default class BeanPage extends React.Component {
                 aria-label='Comment about this bean...'
                 name='text'
                 id={this.props.id}
-                cols='45'
+                cols='25'
                 rows='3'
                 placeholder='Comment about this bean..'
                 className="inputAboutBean">

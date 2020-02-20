@@ -5,7 +5,6 @@ import PrivateRoute from '../Utils/PrivateRoute';
 import PublicOnlyRoute from '../Utils/PublicOnlyRoute';
 import HomePage from '../../routes/HomePage/HomePage'
 import BeanListPage from '../../routes/BeanListPage/BeanListPage';
-// import BeanPage from '../../routes/BeanCard/BeanCard';
 import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import UserPage from '../../routes/UserPage/UserPage';
@@ -204,10 +203,6 @@ export default class App extends React.Component {
                       path={'/account'} 
                       component={UserPage}
                     />
-                    {/* <PrivateRoute
-                      path={'/beans/:beanId'} 
-                      component={UserBeanCard}
-                    /> */}
                      <Route
                       component={NotFoundPage}
                     />

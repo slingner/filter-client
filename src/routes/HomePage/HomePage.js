@@ -28,7 +28,7 @@ export default class HomePage extends Component {
                   <h3>Keep track and learn about your favorite beans</h3>
               </header>
               <img src={savedbeans} className='screenshot-saved-bean-img' alt='savedbeans'/>
-              <p> Browse through the collection to explore each bean's country of origin, MASL(Meters Above Sea Level), Grower, Process and flavor notes. </p>
+              <p> Browse through the collection to explore each bean's Country of Origin, MASL(Meters Above Sea Level), Grower, Process and Flavor Notes. </p>
               <img src={coffee2} className='coffee-froth-img' alt='coffee2'/>
               <p>FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world. </p>
               <img src={coffee3} className='coffee-filter-img' alt='coffee3'/>

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import './BeanCard.css'
 import config from '../../config';
 import TokenService from '../../services/token-service';
-// import { Link } from 'react-router-dom'
 import BeansListContext from '../../contexts/BeansListContext';
 
 

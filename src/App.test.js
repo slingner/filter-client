@@ -1,4 +1,7 @@
+// make React available
 import React from 'react';
+
+// make the ReactDOM available, necessary for rendering the component
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './components/App/App';

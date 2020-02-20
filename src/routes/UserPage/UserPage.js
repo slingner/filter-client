@@ -45,10 +45,6 @@ export default class BeanListPage extends Component {
       .catch(this.context.setError)
   }
 
- 
-
-  
-
   handleChange = (e) => {
     const item = e.target.id;
     const isChecked = e.target.checked;
@@ -75,7 +71,7 @@ export default class BeanListPage extends Component {
    
     return (
       <section className='BeanList'>
-        <div>
+        <div className='checkbox-wrapper'>
             <CheckBox 
               handleChange={this.handleChange}
               checked={this.state.flavorsSelected.get(flavors.flavor_name)}

@@ -12,3 +12,11 @@
   justify-content: center;
   flex-wrap: wrap;
 } 
+
+/* this centers the checkbox filter in center of page */
+.checkbox-wrapper {
+  display: flex;
+  min-width: 200px;
+  align-items: center;
+  flex-direction: column;
+}
