@@ -8,10 +8,12 @@ Discover and explore small batch roasted coffee beans from around the world by f
 
 ![Laptop Screenshot](README-asset/laptop_screenshot.png?raw=true)
 
+Filter is responsive to any screen size so you can explore your beans on the road!
+![Phone Screenshot](README-asset/phone_screenshot.png?raw=true)
+
 FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world.
 
-
-![Phone Screenshot](README-asset/phone_screenshot.png?raw=true)
+![Bean Closeup](README-asset/coffee3.jpg?raw=true)
 
 Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to register for a new account and begin exploring the collection of all beans [https://filter-app.now.sh/BeanList](https://filter-app.now.sh/BeanList).<br />
 
