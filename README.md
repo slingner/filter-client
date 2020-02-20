@@ -4,11 +4,11 @@ Live Link: [https://filter-app.now.sh/](https://filter-app.now.sh/)
 
 ### Summary
 
-FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world.
+FILTER gives you the opportunity to explore coffee beans that are responsibly sourced from crops around the world.
 
 ![Bean Closeup](README-asset/coffee4.jpg?raw=true)
 
-When you first open the web app, you will see a list of coffee beans from around the world (each one as an individual card). As a guest, you will see a Flavor Filter set of checkboxes which will allow you to filter the list to your specifications. 
+When you first open the web app and select All Beans from the navigation bar, you will see a list of coffee beans from around the world (each one as an individual card). While browsing, you will see a Flavor Filterm, which is set of checkboxes which will allow you to filter the list to based on the flavor profile you are interested in. An example of this filter is if a user selects FRUIT and CITRUS, the All Beans list will filter down to display all individual beans that have the FRUIT AND CITRUS flavor notes. 
 
 ![Laptop Screenshot](README-asset/laptop_screenshot.png?raw=true)
 
