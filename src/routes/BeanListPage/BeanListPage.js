@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 import BeansListContext from '../../contexts/BeansListContext';
-// import FilterApiService from '..//../services/filter-api-service'
 import BeanCard from '../BeanCard/BeanCard';
-// import OriginFilter from '../../components/OriginFilter/OriginFilter';
 import './BeanListPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
-// import AuthApiService from '../../services/auth-api-service'
-
 
 export default class BeanListPage extends Component {
   state = {
@@ -19,8 +15,8 @@ export default class BeanListPage extends Component {
 
   static contextType = BeansListContext;
 
+//do I need to call for all flavors here? isn't this happening in Checkbox?
   componentDidMount() {
-    // this.context.fetchBeanByUser();
     this.context.fetchAllBeans();
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',
@@ -51,10 +47,9 @@ export default class BeanListPage extends Component {
     const isChecked = e.target.checked;
     this.setState(prevState => ({ flavorsSelected: prevState.flavorsSelected.set(item, isChecked) }));
   }
-
+//this maps through the Map() to retreive the true/checked values
+//once retreived, pass results through fetchbean
   handleClick = () => {
-    //do a loop through flavors selected
-    //create a new array of checked ids
     const map = this.state.flavorsSelected
     let array = Array.from(map.entries())
     array = array.filter(val => {

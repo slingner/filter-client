@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import BeansListContext from '../../contexts/BeansListContext';
-// import FilterApiService from '..//../services/filter-api-service'
 import UserBeanCard from '../UserBeanCard/UserBeanCard';
 import './UserPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
-// import TokenService from '../../services/token-service';
 import FilterApiService from '../../services/filter-api-service';
 
 export default class BeanListPage extends Component {

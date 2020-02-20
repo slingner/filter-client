@@ -16,8 +16,7 @@ export default class BeanPage extends React.Component {
   }
 
   static contextType = BeansListContext;
-
-
+//on submit of the review form, this will run the post call to enter data to reviews table in DB
   handleSubmit = (e) => {
     e.preventDefault()
     const { text } = e.target
@@ -30,7 +29,7 @@ export default class BeanPage extends React.Component {
         console.error(err);
       })
   }
-
+// fetch delete call to delete specific bean card based on bean.id
   deleteBean = (id) =>{
     const newBeans = this.props.userBeans.filter(beans =>
     beans.id !== id
@@ -60,6 +59,7 @@ export default class BeanPage extends React.Component {
 
   render() {
 
+  //this grabs the reviews from state in App.js, filters to show only ones that match beanId of review to selected review
   let reviews = this.context.reviews
   let review = reviews.filter(review => review.coffee_bean_id === this.props.id)
   let text = review.map((text, index) => <li key={index}>{text.text}</li>)
@@ -103,7 +103,7 @@ export default class BeanPage extends React.Component {
             <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete Bean</button>
           </div>
         )}
-  }
+}
 
 BeanPage.propTypes = {
   bean_name: PropTypes.string.isRequired,

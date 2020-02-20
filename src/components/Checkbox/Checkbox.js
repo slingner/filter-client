@@ -1,15 +1,14 @@
 import React from 'react';
 import config from '../../config';
 import './Checkbox.css';
-// import BeanListPage from '../../routes/BeanListPage/BeanListPage';
 
 export default class CheckBox extends React.Component {
   state = {
     flavors: [],
     error: null
   };
-
   
+  //fetch call for displaying checkboxes for Flavor Filter
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',

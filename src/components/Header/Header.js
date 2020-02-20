@@ -4,10 +4,10 @@ import './Header.css'
 import TokenService from '../../services/token-service'
 
 class Header extends Component {
-
-
+  
+  
+  //if a user is logged in, this is what displays in NavBar
   renderLogoutLink = () => {
-
     return (
       <>
         <NavLink className='Links'
@@ -26,7 +26,7 @@ class Header extends Component {
       </>
     )
   }
-
+//if a user is logged out, this is what displays in NavBar
   renderLoginLink = () => {
     return (
       <>
@@ -47,12 +47,12 @@ class Header extends Component {
   }
 
   render() {
- 
     return <>
       <header>
         <NavLink to={'/'} className='nav-title'>FILTER</NavLink>
       </header>
       <nav className='nav-bar'>
+        {/* hasAuthToken checks for log in or out state */}
         {TokenService.hasAuthToken()
           ? this.renderLogoutLink()
           : this.renderLoginLink()}

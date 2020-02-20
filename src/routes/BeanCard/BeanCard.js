@@ -5,7 +5,6 @@ import config from '../../config';
 import TokenService from '../../services/token-service';
 import BeansListContext from '../../contexts/BeansListContext';
 
-
 export default class BeanPage extends React.Component {
 
   state = {
@@ -14,6 +13,7 @@ export default class BeanPage extends React.Component {
 
   static contextType = BeansListContext;
 
+  //this is the post call to add the beanId to the Filter_Users table in DB
   postBeanIdOnUserTable = (beanId) => {
     return fetch(`${config.API_ENDPOINT}/beans`, {
       method: 'POST',
@@ -36,11 +36,11 @@ export default class BeanPage extends React.Component {
         this.setState({ error })
       })   
   }
-
+//on click function that is called, which then runs the post of beanId to userID
   handleSaveCardClick = (id) => {
     this.postBeanIdOnUserTable(id)
   }
-
+//if a user has already saved to account, this will toggle to save 'saved!'
   showSavedStatus = () => {
     let arrayOfIds = this.props.userBeans.map( x => x.id )
     const saved = arrayOfIds.includes(this.props.id)
@@ -54,7 +54,6 @@ export default class BeanPage extends React.Component {
   }
 
   render() {
-    
     return (
           <div className='Bean'>
               <h3 className='Bean_name'>
@@ -76,7 +75,6 @@ export default class BeanPage extends React.Component {
              Flavor Notes: {this.props.flavor_notes}
             </p>
             {TokenService.hasAuthToken() ? this.showSavedStatus() : ''}
-
           </div>
         )}
   }

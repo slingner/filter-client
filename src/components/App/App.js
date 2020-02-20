@@ -22,6 +22,7 @@ export default class App extends React.Component {
     reviews: []
   };
 
+  //fetches the full list of beans from the coffee_beans table in DB
   fetchAllBeans = () => {
     fetch(`${config.API_ENDPOINT}/beans`, {
       method: 'GET',
@@ -47,6 +48,8 @@ export default class App extends React.Component {
       })
   }
 
+  //fetches a filtered list of beans from the coffee_beans table based on flavor notes selected
+  //based on if it's coming from a logged in user or not
   fetchBeansByFlavorId = (arrayOfIds, isFromUser) => {
     if(!isFromUser) {
       fetch(`${config.API_ENDPOINT}/beans?flavor_note_id=${arrayOfIds}`, {
@@ -96,7 +99,7 @@ export default class App extends React.Component {
         })   
       }
   }
-
+  //this fetches all beans that a logged in user has saved from the saved table in DB
   fetchBeanByUser = () => {
     fetch(`${config.API_ENDPOINT}/userbean`, {
       method: 'GET',
@@ -121,7 +124,7 @@ export default class App extends React.Component {
         this.setState({ error })
       })
   }
-
+//changes state once a user successfully logs in
   handleLoginSuccess = () => {
     if(TokenService.hasAuthToken()) {
       this.setState({
@@ -129,35 +132,32 @@ export default class App extends React.Component {
       })
     }
   }
-
+//changes state to logged out when a user clicks log out
   handleLogoutClick = () => {
     TokenService.clearAuthToken()
     this.setState({
       isAuthenticated: false
     })
   }
-
+//this add a review to the reviews state when a user hits submit on the add review button
+//inside UserBeanCard.js
   addReview = review => {
     this.setState({
       reviews: this.state.reviews.concat(review)
     }) 
   }
-
-
+//this changes state of error to true
   setError = error => {
     console.error(error)
     this.setState({ error })
   }
+  //this sets the state of error to null
   clearError = () => {
     this.setState({ error: null })
   }
 
-  // setReviews = reviews => {
-  //   this.setState({ reviews })
-  // }
-  
-
   render(){
+    //this is where all my context lives under the name BeanListContext 
     const contextValue = {
       fetchAllBeans: this.fetchAllBeans,
       beans: this.state.beans,
