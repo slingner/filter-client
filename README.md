@@ -22,7 +22,7 @@ Once logged in, a returning user will have the ability to save specific coffee b
 
 This app will be useful to coffee lovers around the world. Having the ability to explore and save coffee beans that they'd like to try will be an educational and useful experience.
 
-Filter is responsive to any screen size so you can explore your beans on the road!
+Filter is responsive to any screen size so you can explore your beans on the go!
 ![Phone Screenshot](README-asset/phone_screenshot.png?raw=true)
 
 Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to register for a new account and begin exploring the collection!<br />
