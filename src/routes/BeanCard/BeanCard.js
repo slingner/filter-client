@@ -1,6 +1,5 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import './BeanCard.css'
+import React from 'react';
+import './BeanCard.css';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import BeansListContext from '../../contexts/BeansListContext';
@@ -13,6 +12,9 @@ export default class BeanPage extends React.Component {
 
   static contextType = BeansListContext;
 
+  componentDidMount() {
+    this.context.fetchBeanByUser();
+  }
   //this is the post call to add the beanId to the Filter_Users table in DB
   postBeanIdOnUserTable = (beanId) => {
     return fetch(`${config.API_ENDPOINT}/beans`, {
@@ -42,7 +44,7 @@ export default class BeanPage extends React.Component {
   }
 //if a user has already saved to account, this will toggle to save 'saved!'
   showSavedStatus = () => {
-    let arrayOfIds = this.props.userBeans.map( x => x.id )
+    let arrayOfIds = this.context.userBeans.map( x => x.id )
     const saved = arrayOfIds.includes(this.props.id)
 
     return (
@@ -79,9 +81,7 @@ export default class BeanPage extends React.Component {
         )}
   }
 
-BeanPage.propTypes = {
-  bean_name: PropTypes.string.isRequired,
-}
+
 
 
 

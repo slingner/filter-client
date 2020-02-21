@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import './UserBeanCard.css'
 import config from '../../config';
 import TokenService from '../../services/token-service';
@@ -47,7 +46,6 @@ export default class BeanPage extends React.Component {
     const { text } = e.target
     FilterApiService.postReview(text.value, this.props.id)
       .then((res)=> {
-        console.log(res);
         this.addReview(res)
       })
       .catch(err => {
@@ -143,16 +141,16 @@ export default class BeanPage extends React.Component {
               <button className='review-submit-button' type='submit'>Submit Bean Note</button>
             </form>
             <ul className='reviews'>
-            <em>Notes On Bean:</em> {this.state.reviews.map((review) => (<Review key={`review-${review.id}`} deleteReview={this.deleteReview} reviewText={review.text} reviewId={review.id} />))}
+            <em>Notes On Bean:</em><br />  {this.state.reviews.map((review) => (<Review key={`review-${review.id}`} deleteReview={this.deleteReview} reviewText={review.text} reviewId={review.id} />))}
             </ul>
             <button className='delete-bean-card-button' onClick={() => this.deleteBean(this.props.id)}>Delete Bean</button>
           </div>
         )}
 }
 
-BeanPage.propTypes = {
-  bean_name: PropTypes.string.isRequired,
-}
+// BeanPage.propTypes = {
+//   bean_name: PropTypes.string.isRequired,
+// }
 
 
 

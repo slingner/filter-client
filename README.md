@@ -8,7 +8,7 @@ FILTER gives you the opportunity to explore coffee beans that are responsibly so
 
 ![Bean Closeup](README-asset/coffee4.jpg?raw=true)
 
-When you first open the web app and select All Beans from the navigation bar, you will see a list of coffee beans from around the world (each one as an individual card). While browsing, you will see a Flavor Filter, which is set of checkboxes which will allow you to filter the list to based on the flavor profile you are interested in. An example of this filter is if a user selects FRUIT and CITRUS, the All Beans list will filter down to display all individual beans that have the FRUIT AND CITRUS flavor notes. 
+When a user first open FILTER, they will see a landing page giving examples and screenshots of FILTER's potential. After logging in, the user will be able to browse and filter through the coffee beans collection. The Flavor Filter, which is set of flavor note checkboxes, will allow the user to filter the list based on the flavor they are interested in. An example of this filter is if a user selects FRUIT and CITRUS, the All Beans list will filter down to display all individual beans that have the FRUIT AND CITRUS flavor notes. 
 
 ![Laptop Screenshot](README-asset/laptop_screenshot.png?raw=true)
 
@@ -16,25 +16,19 @@ When browsing through the collection, explore each bean's Country of Origin, MAS
 
 ![BeanCard](README-asset/BeanCard.png?raw=true)
 
-The user then has the option to sign up to create a personal account: <br />
-
-![Register](README-asset/Register.png?raw=true)
-and then log in:
-![LogIn](README-asset/LogIn.png?raw=true)
-
 Once logged in, a returning user will have the ability to save specific coffee bean cards from the main list to their account(Your Beans). Within their account, the user will have the ability to view and modify their list of saved coffee beans (delete cards, add new cards, and add personal notes).
 
 ![UserPage](README-asset/UserPage.png?raw=true)
 
 This app will be useful to coffee lovers around the world. Having the ability to explore and save coffee beans that they'd like to try will be an educational and useful experience.
 
-
 Filter is responsive to any screen size so you can explore your beans on the road!
 ![Phone Screenshot](README-asset/phone_screenshot.png?raw=true)
 
 Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to register for a new account and begin exploring the collection of all beans [https://filter-app.now.sh/BeanList](https://filter-app.now.sh/BeanList).<br />
 
-
+## Technologies Used to Develop FILTER
+React, Enzyme, Mocha, Chai, Node, Express, PostgreSQL.
 
 -/-/-/-/-/-/-/-/
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -46,7 +40,7 @@ In the project directory, you can run:
 ### `npm run start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.

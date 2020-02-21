@@ -77,7 +77,8 @@ exports[`UserBeanCard component renders a .UserBeanCard by default 1`] = `
     <em>
       Notes On Bean:
     </em>
-     
+    <br />
+      
   </ul>
   <button
     className="delete-bean-card-button"
@@ -94,7 +95,9 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
 >
   <h3
     className="Bean_name"
-  />
+  >
+    testname
+  </h3>
   <p
     className="Bean_origin"
   >
@@ -103,6 +106,7 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
     </em>
     <br />
      
+    testbeanorigin
   </p>
   <p
     className="Bean_masl"
@@ -112,6 +116,7 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
     </em>
     <br />
      
+    testbeanbeanmasl
   </p>
   <p
     className="Bean_grower"
@@ -121,6 +126,7 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
     </em>
     <br />
      
+    testbeangrower
   </p>
   <p
     className="Bean_process"
@@ -130,6 +136,7 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
     </em>
     <br />
      
+    testbeanprocess
   </p>
   <p
     className="flavor_notes"
@@ -139,6 +146,7 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
     </em>
     <br />
      
+    testflavornotes
   </p>
   <form
     className="reviewSubmit"
@@ -148,7 +156,7 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
       aria-label="Comment about this bean..."
       className="inputAboutBean"
       cols="25"
-      id="a"
+      id="1"
       name="text"
       placeholder="Comment about this bean.."
       rows="3"
@@ -166,7 +174,8 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
     <em>
       Notes On Bean:
     </em>
-     
+    <br />
+      
   </ul>
   <button
     className="delete-bean-card-button"

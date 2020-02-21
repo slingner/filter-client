@@ -4,6 +4,8 @@ import BeanCard from '../BeanCard/BeanCard';
 import './BeanListPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
+import TokenService from '../../services/token-service';
+
 
 export default class BeanListPage extends Component {
   state = {
@@ -22,6 +24,7 @@ export default class BeanListPage extends Component {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`
       }
     })
       .then(res => {
@@ -83,7 +86,7 @@ export default class BeanListPage extends Component {
                   <BeanCard
                     key={idx}
                     {...bean}
-                    userBeans={this.context.userBeans}
+                    // userBeans={this.context.userBeans}
                   />
                   )
                 })

@@ -12,6 +12,12 @@
   text-align: left;
 }
 
+.save{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
 @media screen and (max-width: 600px) {
 
 }

@@ -194,7 +194,7 @@ addReview = review => {
                       path={'/'}
                       component={HomePage}
                     />
-                    <Route
+                    <PrivateRoute
                       path={'/BeanList'}
                       component={BeanListPage}
                     />
