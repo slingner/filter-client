@@ -2,6 +2,9 @@
 
 Live Link: [https://filter-app.now.sh/](https://filter-app.now.sh/)
 
+## Technologies Used to Develop FILTER
+React, CSS, Node, Express, PostgreSQL, Enzyme, Mocha, Chai.
+
 ### Summary
 
 FILTER gives you the opportunity to explore coffee beans that are responsibly sourced from crops around the world.
@@ -27,8 +30,6 @@ Filter is responsive to any screen size so you can explore your beans on the go!
 
 Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to register for a new account and begin exploring the collection!<br />
 
-## Technologies Used to Develop FILTER
-React, Enzyme, Mocha, Chai, Node, Express, PostgreSQL.
 
 <br />
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
