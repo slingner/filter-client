@@ -18,7 +18,7 @@ export default class HomePage extends Component {
                   <h3>Welcome to Filter! </h3>
               </header>
               <img src={coffee4} className='bean-in-hand-img' alt='coffee4'/>
-              <p>Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles. To get started, {TokenService.hasAuthToken()? 'Logged In!':<NavLink to='/register'>
+              <p>Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles. To get started, {TokenService.hasAuthToken()? '(Already Logged In!)':<NavLink to='/register'>
               Sign Up Now </NavLink>} and explore the <NavLink className='Links'to='/BeanList'>
               collection!</NavLink> 
               </p>
@@ -35,7 +35,7 @@ export default class HomePage extends Component {
               <p>Once you've found some beans that give you a jolt, save them to your personalized collection.</p>
             </section>
             {TokenService.hasAuthToken()
-            ? 'Logged In!'
+            ? '(Already Logged In!)'
           :      <NavLink
           to='/register'>
           Sign Up Now!

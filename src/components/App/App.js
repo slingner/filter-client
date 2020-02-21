@@ -178,7 +178,6 @@ addReview = review => {
       addReview: this.addReview,
       setError: this.setError,
       clearError: this.clearError,
-      setReviews: this.setReviews
     }
 
     return (

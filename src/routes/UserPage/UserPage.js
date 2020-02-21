@@ -4,7 +4,7 @@ import UserBeanCard from '../UserBeanCard/UserBeanCard';
 import './UserPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
-import FilterApiService from '../../services/filter-api-service';
+
 
 export default class BeanListPage extends Component {
   state = {
@@ -38,9 +38,6 @@ export default class BeanListPage extends Component {
         console.error(error)
         this.setState({ error })
       })
-    FilterApiService.getBeanReviews()
-      .then(this.context.addReview)
-      .catch(this.context.setError)
   }
 
   handleChange = (e) => {

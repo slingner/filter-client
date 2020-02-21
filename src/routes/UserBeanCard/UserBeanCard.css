@@ -32,4 +32,19 @@
   background-color: rgb(88, 113, 88);
   color: white;
   border: 1px solid rgb(88, 113, 88);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
 }
+
+.review-submit-button{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.delete-bean-card-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+}
+

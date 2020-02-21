@@ -13,11 +13,16 @@ const FilterApiService = {
           : res.json()
       )
   },
-  getBeanReviews() {
+  getBeanReviews(beanId) {
     return fetch(`${config.API_ENDPOINT}/reviews`, {
+      method: 'POST',
       headers: {
+        'content-type': 'application/json',
         'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
+      body: JSON.stringify({
+        coffee_bean_id: beanId
+      })
     })
       .then(res =>
         (!res.ok)
@@ -26,7 +31,7 @@ const FilterApiService = {
       )
   },
   postReview( text, beanId ) {
-    return fetch(`${config.API_ENDPOINT}/reviews`, {
+    return fetch(`${config.API_ENDPOINT}/reviews/add`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserBeanCard component renders a .UserBeanCard by default 1`] = `
+<div
+  className="Bean"
+>
+  <h3
+    className="Bean_name"
+  />
+  <p
+    className="Bean_origin"
+  >
+    <em>
+      Origin:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="Bean_masl"
+  >
+    <em>
+      Meters Above Sea Level:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="Bean_grower"
+  >
+    <em>
+      Grower:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="Bean_process"
+  >
+    <em>
+      Process:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="flavor_notes"
+  >
+    <em>
+      Flavor Notes:
+    </em>
+    <br />
+     
+  </p>
+  <form
+    className="reviewSubmit"
+    onSubmit={[Function]}
+  >
+    <textarea
+      aria-label="Comment about this bean..."
+      className="inputAboutBean"
+      cols="25"
+      name="text"
+      placeholder="Comment about this bean.."
+      rows="3"
+    />
+    <button
+      className="review-submit-button"
+      type="submit"
+    >
+      Submit Bean Note
+    </button>
+  </form>
+  <ul
+    className="reviews"
+  >
+    <em>
+      Notes On Bean:
+    </em>
+     
+  </ul>
+  <button
+    className="delete-bean-card-button"
+    onClick={[Function]}
+  >
+    Delete Bean
+  </button>
+</div>
+`;
+
+exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
+<div
+  className="Bean"
+>
+  <h3
+    className="Bean_name"
+  />
+  <p
+    className="Bean_origin"
+  >
+    <em>
+      Origin:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="Bean_masl"
+  >
+    <em>
+      Meters Above Sea Level:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="Bean_grower"
+  >
+    <em>
+      Grower:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="Bean_process"
+  >
+    <em>
+      Process:
+    </em>
+    <br />
+     
+  </p>
+  <p
+    className="flavor_notes"
+  >
+    <em>
+      Flavor Notes:
+    </em>
+    <br />
+     
+  </p>
+  <form
+    className="reviewSubmit"
+    onSubmit={[Function]}
+  >
+    <textarea
+      aria-label="Comment about this bean..."
+      className="inputAboutBean"
+      cols="25"
+      id="a"
+      name="text"
+      placeholder="Comment about this bean.."
+      rows="3"
+    />
+    <button
+      className="review-submit-button"
+      type="submit"
+    >
+      Submit Bean Note
+    </button>
+  </form>
+  <ul
+    className="reviews"
+  >
+    <em>
+      Notes On Bean:
+    </em>
+     
+  </ul>
+  <button
+    className="delete-bean-card-button"
+    onClick={[Function]}
+  >
+    Delete Bean
+  </button>
+</div>
+`;
