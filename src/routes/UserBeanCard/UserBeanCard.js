@@ -51,6 +51,7 @@ export default class BeanPage extends React.Component {
       .catch(err => {
         console.error(err);
       })
+    e.target.text.value = ''
   }
 // fetch delete call to delete specific bean card based on bean.id
   deleteBean = (id) =>{

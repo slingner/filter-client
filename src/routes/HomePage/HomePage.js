@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import coffee4 from './Assets/coffee4.jpg';
 import coffee3 from './Assets/coffee3.jpg';
 import coffee2 from './Assets/coffee2.jpg';
+import beanlist from './Assets/beanlist.png';
 import savedbeans from './Assets/savedbeans.png';
 import './HomePage.css';
 import { NavLink } from 'react-router-dom';
@@ -26,13 +27,17 @@ export default class HomePage extends Component {
               <header>
                   <h3>Keep track and learn about your favorite beans</h3>
               </header>
-              <img src={savedbeans} className='screenshot-saved-bean-img' alt='savedbeans'/>
               <p> Browse through the collection to explore each bean's Country of Origin, MASL(Meters Above Sea Level), Grower, Process and Flavor Notes. </p>
-              <img src={coffee2} className='coffee-froth-img' alt='coffee2'/>
+              <img src={beanlist} className='screenshot-saved-bean-img' alt='savedbeans'/>
+              <p>Once you've found some beans that give you a jolt, save them to your personalized collection and leave notes for yourself regarding each bean!</p>
+              <img src={savedbeans} className='screenshot-saved-bean-img' alt='savedbeans'/>
               <p>FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world. </p>
+
+              <img src={coffee2} className='coffee-froth-img' alt='coffee2'/>
+              <p>FILTER away!</p>
               <img src={coffee3} className='coffee-filter-img' alt='coffee3'/>
-              <p>Once you've found some beans that give you a jolt, save them to your personalized collection.</p>
             </section>
+            <br />
             {TokenService.hasAuthToken()
             ? '(Already Logged In!)'
           :      <NavLink
