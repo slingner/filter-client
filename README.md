@@ -30,7 +30,7 @@ Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to
 ## Technologies Used to Develop FILTER
 React, Enzyme, Mocha, Chai, Node, Express, PostgreSQL.
 
--/-/-/-/-/-/-/-/
+<br />
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
