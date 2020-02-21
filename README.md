@@ -2,7 +2,7 @@
 
 Live Link: [https://filter-app.now.sh/](https://filter-app.now.sh/)
 
-## Technologies Used to Develop FILTER
+### Tech Stack for FILTER
 React, CSS, Node, Express, PostgreSQL, Enzyme, Mocha, Chai.
 
 ### Summary
