@@ -45,7 +45,10 @@ export default class HomePage extends Component {
           Sign Up Now!
           </NavLink>}
         
-          
+          <p>Demo FILTER and see how to save and take notes on each card by logging in using: </p>
+          <p> Username: dunder</p>
+          <p> Password: password</p>
+          <p></p>
           </main>
     </div>
     )
