@@ -7,9 +7,9 @@ import BeansListContext from '../../contexts/BeansListContext';
 import FilterApiService from '../../services/filter-api-service';
 
 export default class BeanPage extends React.Component {
-  static defaultProps = {
-    match: { params: {} },
-  }
+  // static defaultProps = {
+  //   match: { params: {} },
+  // }
 
   state = {
     beans: []
@@ -23,7 +23,7 @@ export default class BeanPage extends React.Component {
     FilterApiService.postReview(text.value, this.props.id)
       .then((res)=> {
         text.value = '';
-        this.context.addReview(res) 
+        this.context.addReview(res)
       })
       .catch(err => {
         console.error(err);
@@ -56,7 +56,7 @@ export default class BeanPage extends React.Component {
       console.error(error)
     })
   }
-//fetch delete call to delete specific bean card based on bean id
+// fetch delete call to delete specific bean card based on bean id
 deleteReview = (id) =>{
   const newReviews = this.context.reviews.filter(reviews =>
   reviews.id !== id
@@ -80,6 +80,7 @@ deleteReview = (id) =>{
   .catch(error => {
     console.error(error)
   })
+  
 }
   render() {
 

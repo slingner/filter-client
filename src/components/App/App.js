@@ -141,19 +141,20 @@ export default class App extends React.Component {
   }
 //add a review to the reviews state when a user hits submit on the add review button
 //inside UserBeanCard.js. This is also ensure that you only are adding reviews that aren't already there
-  addReview = review => {
-    let items = Array.isArray(review) ? review : review;
-    items = items.filter((item) => {
-      const hasReview = this.state.reviews.some((review) => {
-        return review.id === item.id
-      })
-   
-     return !hasReview
-   }) 
-    this.setState({
-      reviews: this.state.reviews.concat(items)
-    }) 
-  }
+addReview = review => {
+  let items = Array.isArray(review) ? review : review;
+
+  items = items.filter((item) => {
+    const hasReview = this.state.reviews.some((review) => {
+      return review.id === item.id
+    })
+   return !hasReview
+ });
+
+  this.setState({
+    reviews: this.state.reviews.concat(items)
+  }) 
+}
 //this changes state of error to true
   setError = error => {
     console.error(error)
