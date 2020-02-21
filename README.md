@@ -25,7 +25,7 @@ This app will be useful to coffee lovers around the world. Having the ability to
 Filter is responsive to any screen size so you can explore your beans on the road!
 ![Phone Screenshot](README-asset/phone_screenshot.png?raw=true)
 
-Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to register for a new account and begin exploring the collection of all beans [https://filter-app.now.sh/BeanList](https://filter-app.now.sh/BeanList).<br />
+Open [https://filter-app.now.sh/register](https://filter-app.now.sh/register) to register for a new account and begin exploring the collection!<br />
 
 ## Technologies Used to Develop FILTER
 React, Enzyme, Mocha, Chai, Node, Express, PostgreSQL.
