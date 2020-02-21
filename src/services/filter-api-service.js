@@ -13,22 +13,10 @@ const FilterApiService = {
           : res.json()
       )
   },
-  getBean(beanId) {
-    return fetch(`${config.API_ENDPOINT}/beans/${beanId}`, {
-      headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
-      },
-    })
-      .then(res =>
-        (!res.ok)
-          ? res.json().then(e => Promise.reject(e))
-          : res.json()
-      )
-  },
   getBeanReviews() {
     return fetch(`${config.API_ENDPOINT}/reviews`, {
       headers: {
-        'authorization': `bearer ${TokenService.getAuthToken()}`,
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
       },
     })
       .then(res =>

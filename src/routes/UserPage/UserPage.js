@@ -59,7 +59,6 @@ export default class BeanListPage extends Component {
     }).map(val => {
       return val[0]
     })
-
     this.context.fetchBeansByFlavorId(array, true)
   }
 

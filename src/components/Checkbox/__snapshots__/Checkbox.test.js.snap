@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component renders a button.CircleButton by default 1`] = `
+<div
+  className="checkbox_container"
+>
+  <div
+    className="FlavorFilter"
+  >
+    Flavor Filter
+  </div>
+</div>
+`;
+
+exports[`Checkbox component renders the checkbox by default 1`] = `
+<div
+  className="checkbox_container"
+>
+  <div
+    className="FlavorFilter"
+  >
+    Flavor Filter
+  </div>
+</div>
+`;
+
+exports[`Checkbox component renders the checkbox from props 1`] = `
+<div
+  className="checkbox_container"
+>
+  <div
+    className="FlavorFilter"
+  >
+    Flavor Filter
+  </div>
+</div>
+`;
+
+exports[`Checkbox component renders the circle button from props 1`] = `
+<div
+  className="checkbox_container"
+>
+  <div
+    className="FlavorFilter"
+  >
+    Flavor Filter
+  </div>
+</div>
+`;

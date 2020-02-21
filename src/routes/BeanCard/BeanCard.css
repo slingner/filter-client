@@ -9,9 +9,7 @@
   box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
   border-radius: 5px;
   margin: 30px;
-  /* display: inline-block;
-  width: 50%; */
-  text-align: center;
+  text-align: left;
 }
 
 @media screen and (max-width: 600px) {

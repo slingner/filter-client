@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component renders a button.CircleButton by default 1`] = `
+<Fragment>
+  <header>
+    <NavLink
+      className="nav-title"
+      to="/"
+    >
+      FILTER
+    </NavLink>
+  </header>
+  <nav
+    className="nav-bar"
+  >
+    <NavLink
+      className="Links"
+      to="/BeanList"
+    >
+      All Beans
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/login"
+    >
+      Log in
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/register"
+    >
+      Register
+    </NavLink>
+  </nav>
+</Fragment>
+`;
+
+exports[`Checkbox component renders the circle button from props 1`] = `
+<Fragment>
+  <header>
+    <NavLink
+      className="nav-title"
+      to="/"
+    >
+      FILTER
+    </NavLink>
+  </header>
+  <nav
+    className="nav-bar"
+  >
+    <NavLink
+      className="Links"
+      to="/BeanList"
+    >
+      All Beans
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/login"
+    >
+      Log in
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/register"
+    >
+      Register
+    </NavLink>
+  </nav>
+</Fragment>
+`;
+
+exports[`Header component renders the circle button from props 1`] = `
+<Fragment>
+  <header>
+    <NavLink
+      className="nav-title"
+      to="/"
+    >
+      FILTER
+    </NavLink>
+  </header>
+  <nav
+    className="nav-bar"
+  >
+    <NavLink
+      className="Links"
+      to="/BeanList"
+    >
+      All Beans
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/login"
+    >
+      Log in
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/register"
+    >
+      Register
+    </NavLink>
+  </nav>
+</Fragment>
+`;
+
+exports[`Header component renders the header 1`] = `
+<Fragment>
+  <header>
+    <NavLink
+      className="nav-title"
+      to="/"
+    >
+      FILTER
+    </NavLink>
+  </header>
+  <nav
+    className="nav-bar"
+  >
+    <NavLink
+      className="Links"
+      to="/BeanList"
+    >
+      All Beans
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/login"
+    >
+      Log in
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/register"
+    >
+      Register
+    </NavLink>
+  </nav>
+</Fragment>
+`;
+
+exports[`Header component renders the header by default 1`] = `
+<Fragment>
+  <header>
+    <NavLink
+      className="nav-title"
+      to="/"
+    >
+      FILTER
+    </NavLink>
+  </header>
+  <nav
+    className="nav-bar"
+  >
+    <NavLink
+      className="Links"
+      to="/BeanList"
+    >
+      All Beans
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/login"
+    >
+      Log in
+    </NavLink>
+    <NavLink
+      className="Links"
+      to="/register"
+    >
+      Register
+    </NavLink>
+  </nav>
+</Fragment>
+`;

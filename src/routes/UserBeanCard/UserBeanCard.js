@@ -12,7 +12,7 @@ export default class BeanPage extends React.Component {
   }
 
   state = {
-    beans: [],
+    beans: []
   }
 
   static contextType = BeansListContext;
@@ -56,13 +56,38 @@ export default class BeanPage extends React.Component {
       console.error(error)
     })
   }
-
+//fetch delete call to delete specific bean card based on bean id
+deleteReview = (id) =>{
+  const newReviews = this.context.reviews.filter(reviews =>
+  reviews.id !== id
+  )
+  this.context.addReview(newReviews)
+  return fetch(`${config.API_ENDPOINT}/reviews/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'content-type': 'application/json',
+      'authorization': `bearer ${TokenService.getAuthToken()}`
+    },
+  })
+  .then(res => {
+    if (!res.ok) {
+      return res.json().then(error => { 
+        throw error
+      })
+    }
+    this.context.fetchBeanByUser();
+  })
+  .catch(error => {
+    console.error(error)
+  })
+}
   render() {
 
   //this grabs the reviews from state in App.js, filters to show only ones that match beanId of review to selected review
   let reviews = this.context.reviews
   let review = reviews.filter(review => review.coffee_bean_id === this.props.id)
-  let text = review.map((text, index) => <li key={index}>{text.text}</li>)
+  let text = review.map((text, index) => <li key={index}>{text.text}<button className='delete-review-button'key={review.id} onClick={() => this.deleteReview(text.id)}>X</button></li>)
+ 
 
     return (
           <div className='Bean'>
@@ -96,9 +121,9 @@ export default class BeanPage extends React.Component {
               </textarea>
               <button type='submit'>Submit Bean Comments</button>
             </form>
-            <p className='reviews'>
+            <ul className='reviews'>
              Reviews: {text}
-            </p>
+            </ul>
       
             <button className='save' onClick={() => this.deleteBean(this.props.id)}>Delete Bean</button>
           </div>
