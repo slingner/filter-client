@@ -8,7 +8,7 @@ FILTER gives you the opportunity to explore coffee beans that are responsibly so
 
 ![Bean Closeup](README-asset/coffee4.jpg?raw=true)
 
-When a user first open FILTER, they will see a landing page giving examples and screenshots of FILTER's potential. After logging in, the user will be able to browse and filter through the coffee beans collection. The Flavor Filter, which is set of flavor note checkboxes, will allow the user to filter the list based on the flavor they are interested in. An example of this filter is if a user selects FRUIT and CITRUS, the All Beans list will filter down to display all individual beans that have the FRUIT AND CITRUS flavor notes. 
+When a user first opens FILTER, they will see a landing page giving examples and screenshots of FILTER's potential. After logging in, the user will be able to browse and filter through the coffee beans collection. The Flavor Filter(a set of flavor note checkboxes) will allow the user to filter the All Beans list based on the flavor they are interested in. An example of using this filter is if a user selects FRUIT and CITRUS, the All Beans list will filter down to display all individual beans that have the FRUIT and CITRUS flavor notes. 
 
 ![Laptop Screenshot](README-asset/laptop_screenshot.png?raw=true)
 
