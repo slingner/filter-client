@@ -18,10 +18,10 @@ export default class HomePage extends Component {
               <header>
                   <h3>Welcome to Filter! </h3>
               </header>
-              <img src={coffee4} className='bean-in-hand-img' alt='coffee4'/>
               <p>Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles. To get started, {TokenService.hasAuthToken()? '(Already Logged In!)':<NavLink to='/register'>
               Sign Up Now </NavLink>} and explore the bean collection!
               </p>
+              <img src={coffee4} className='bean-in-hand-img' alt='coffee4'/>
             </section>
             <section>
               <header>

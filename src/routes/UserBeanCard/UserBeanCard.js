@@ -17,7 +17,6 @@ export default class BeanPage extends React.Component {
   componentDidMount() {
     this.fetchBeanReviews();
   }
-//on submit of the review form, this will run the post call to enter data to reviews table in DB
 
   fetchBeanReviews = () => {
     FilterApiService.getBeanReviews(this.props.id)
