@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginPage /> renders UI as expected 1`] = `
+<section
+  className="Section LoginPage"
+>
+  <h2
+    className="login-header"
+  >
+    <span
+      aria-label="coffee-emoji"
+      role="img"
+    >
+      ☕
+    </span>
+     Login 
+    <span
+      aria-label="coffee-emoji"
+      role="img"
+    >
+      ☕
+    </span>
+  </h2>
+  <form
+    className="LoginForm"
+    onSubmit={[Function]}
+  >
+    <div
+      role="alert"
+    />
+    <div
+      className="user_name"
+    >
+      <label
+        htmlFor="LoginForm__user_name"
+      >
+        User name
+      </label>
+      <input
+        className="Input "
+        id="LoginForm__user_name"
+        name="user_name"
+        required={true}
+      />
+    </div>
+    <div
+      className="password"
+    >
+      <label
+        htmlFor="LoginForm__password"
+      >
+        Password
+      </label>
+      <input
+        className="Input "
+        id="LoginForm__password"
+        name="password"
+        required={true}
+        type="password"
+      />
+    </div>
+    <button
+      className="Button "
+      type="submit"
+    >
+      Login
+    </button>
+  </form>
+</section>
+`;

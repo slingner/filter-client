@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> renders HomePage by default 1`] = `
+<div
+  className="HomePage-wrapper"
+>
+  <main
+    className="main"
+  >
+    <section>
+      <header>
+        <h3>
+          Welcome to Filter! 
+        </h3>
+      </header>
+      <p>
+        Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles. To get started, 
+        <NavLink
+          to="/register"
+        >
+          Sign Up Now 
+        </NavLink>
+         and explore the bean collection!
+      </p>
+      <img
+        alt="coffee4"
+        className="bean-in-hand-img"
+        src="coffee4.jpg"
+      />
+    </section>
+    <section>
+      <header>
+        <h3>
+          Keep track and learn about your favorite beans
+        </h3>
+      </header>
+      <p>
+         Browse through the collection to explore each bean's Country of Origin, MASL(Meters Above Sea Level), Grower, Process and Flavor Notes. 
+      </p>
+      <img
+        alt="savedbeans"
+        className="screenshot-saved-bean-img"
+        src="beanlist.png"
+      />
+      <p>
+        Once you've found some beans that give you a jolt, save them to your personalized collection and leave notes for yourself regarding each bean!
+      </p>
+      <img
+        alt="savedbeans"
+        className="screenshot-saved-bean-img"
+        src="savedbeans.png"
+      />
+      <p>
+        FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world. 
+      </p>
+      <img
+        alt="coffee2"
+        className="coffee-froth-img"
+        src="coffee2.jpg"
+      />
+      <p>
+        FILTER away!
+      </p>
+      <img
+        alt="coffee3"
+        className="coffee-filter-img"
+        src="coffee3.jpg"
+      />
+    </section>
+    <br />
+    <NavLink
+      to="/register"
+    >
+      Sign Up Now!
+    </NavLink>
+    <p>
+      Demo FILTER and see how to save and take notes on each card by 
+      <NavLink
+        className="Links"
+        to="/login"
+      >
+        logging in
+      </NavLink>
+       using: 
+    </p>
+    <p>
+       Username: dunder
+    </p>
+    <p>
+       Password: password
+    </p>
+    <p />
+  </main>
+</div>
+`;

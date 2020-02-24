@@ -86,7 +86,6 @@ export default class BeanListPage extends Component {
                   <BeanCard
                     key={idx}
                     {...bean}
-                    // userBeans={this.context.userBeans}
                   />
                   )
                 })

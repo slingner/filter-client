@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Login /> renders UI as expected 1`] = `
+<li>
+  <button
+    className="delete-review-button"
+    onClick={[Function]}
+  >
+    Delete
+  </button>
+</li>
+`;

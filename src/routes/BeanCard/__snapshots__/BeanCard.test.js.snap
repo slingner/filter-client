@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<BeanCard /> renders BeanCard by default 1`] = `<BeanPage />`;
