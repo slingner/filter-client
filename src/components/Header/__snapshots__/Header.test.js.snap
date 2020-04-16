@@ -2,12 +2,21 @@
 
 exports[`Header component renders the header 1`] = `
 <Fragment>
-  <header>
+  <header
+    className="header"
+  >
     <NavLink
       className="nav-title"
       to="/"
     >
-      FILTER
+      <ForwardRef(SvgFilterText)
+        style={
+          Object {
+            "fill": "rgb(90, 90, 90)",
+            "width": "100px",
+          }
+        }
+      />
     </NavLink>
   </header>
   <nav
@@ -37,12 +46,21 @@ exports[`Header component renders the header 1`] = `
 
 exports[`Header component renders the header by default 1`] = `
 <Fragment>
-  <header>
+  <header
+    className="header"
+  >
     <NavLink
       className="nav-title"
       to="/"
     >
-      FILTER
+      <ForwardRef(SvgFilterText)
+        style={
+          Object {
+            "fill": "rgb(90, 90, 90)",
+            "width": "100px",
+          }
+        }
+      />
     </NavLink>
   </header>
   <nav

@@ -7,7 +7,7 @@ exports[`Checkbox component renders the checkbox by default 1`] = `
   <div
     className="FlavorFilter"
   >
-    Flavor Filter
+    FLAVOR 
   </div>
 </div>
 `;
@@ -19,7 +19,7 @@ exports[`Checkbox component renders the checkbox from props 1`] = `
   <div
     className="FlavorFilter"
   >
-    Flavor Filter
+    FLAVOR 
   </div>
 </div>
 `;

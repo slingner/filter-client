@@ -78,7 +78,7 @@ exports[`UserBeanCard component renders a .UserBeanCard by default 1`] = `
       Notes On Bean:
     </em>
     <br />
-      
+     
   </ul>
   <button
     className="delete-bean-card-button"
@@ -175,7 +175,7 @@ exports[`UserBeanCard component renders the UserBeanCard given props 1`] = `
       Notes On Bean:
     </em>
     <br />
-      
+     
   </ul>
   <button
     className="delete-bean-card-button"

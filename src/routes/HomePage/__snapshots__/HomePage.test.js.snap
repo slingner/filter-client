@@ -9,18 +9,17 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
   >
     <section>
       <header>
-        <h3>
-          Welcome to Filter! 
-        </h3>
+        <ForwardRef(SvgFilterIcon)
+          style={
+            Object {
+              "fill": "rgb(90, 90, 90)",
+              "width": "140px",
+            }
+          }
+        />
       </header>
       <p>
-        Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles. To get started, 
-        <NavLink
-          to="/register"
-        >
-          Sign Up Now 
-        </NavLink>
-         and explore the bean collection!
+        Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles.
       </p>
       <img
         alt="coffee4"
@@ -35,7 +34,9 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
         </h3>
       </header>
       <p>
-         Browse through the collection to explore each bean's Country of Origin, MASL(Meters Above Sea Level), Grower, Process and Flavor Notes. 
+         
+        Browse through the collection to explore each bean's Country of Origin, MASL(Meters Above Sea Level), Grower, Process and Flavor Notes.
+         
       </p>
       <img
         alt="savedbeans"
@@ -51,7 +52,8 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
         src="savedbeans.png"
       />
       <p>
-        FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world. 
+        FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world.
+         
       </p>
       <img
         alt="coffee2"
@@ -73,23 +75,6 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
     >
       Sign Up Now!
     </NavLink>
-    <p>
-      Demo FILTER and see how to save and take notes on each card by 
-      <NavLink
-        className="Links"
-        to="/login"
-      >
-        logging in
-      </NavLink>
-       using: 
-    </p>
-    <p>
-       Username: dunder
-    </p>
-    <p>
-       Password: password
-    </p>
-    <p />
   </main>
 </div>
 `;
