@@ -6,7 +6,6 @@ import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 
-
 export default class BeanListPage extends Component {
   state = {
     flavors: [],
@@ -17,83 +16,82 @@ export default class BeanListPage extends Component {
 
   static contextType = BeansListContext;
 
-//do I need to call for all flavors here? isn't this happening in Checkbox?
+  //do I need to call for all flavors here? isn't this happening in Checkbox?
   componentDidMount() {
     this.context.fetchAllBeans();
     fetch(`${config.API_ENDPOINT}/allflavors`, {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'authorization': `Bearer ${TokenService.getAuthToken()}`
-      }
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
+      },
     })
-      .then(res => {
+      .then((res) => {
         if (!res.ok) {
-          return res.json().then(error => Promise.reject(error))
+          return res.json().then((error) => Promise.reject(error));
         }
-        return res.json()
+        return res.json();
       })
-      .then(flavors => {
+      .then((flavors) => {
         this.setState({
           flavors,
           error: null,
-        })
+        });
       })
-      .catch(error => {
-        console.error(error)
-        this.setState({ error })
-      })
+      .catch((error) => {
+        console.error(error);
+        this.setState({ error });
+      });
   }
 
   handleChange = (e) => {
     const item = e.target.id;
     const isChecked = e.target.checked;
-    this.setState(prevState => ({ flavorsSelected: prevState.flavorsSelected.set(item, isChecked) }));
-  }
-//this maps through the Map() to retreive the true/checked values
-//once retreived, pass results through fetchbean
+    this.setState((prevState) => ({
+      flavorsSelected: prevState.flavorsSelected.set(item, isChecked),
+    }));
+  };
+  //this maps through the Map() to retreive the true/checked values
+  //once retreived, pass results through fetchbean
   handleClick = () => {
-    const map = this.state.flavorsSelected
-    let array = Array.from(map.entries())
-    array = array.filter(val => {
-      return val[1] === true
-    }).map(val => {
-      return val[0]
-    })
-    this.context.fetchBeansByFlavorId(array)
-  }
+    const map = this.state.flavorsSelected;
+    let array = Array.from(map.entries());
+    array = array
+      .filter((val) => {
+        return val[1] === true;
+      })
+      .map((val) => {
+        return val[0];
+      });
+    this.context.fetchBeansByFlavorId(array);
+  };
 
   render() {
-    const { beans } = this.context
-    const { flavors } = this.state
+    const { beans } = this.context;
+    const { flavors } = this.state;
 
     return (
-      <section className='BeanList'>
-        <div className='checkbox-wrapper'>
-            <CheckBox 
-              handleChange={this.handleChange}
-              checked={this.state.flavorsSelected.get(flavors.flavor_name)}
-              handleClick={this.handleClick}
-            />    
-            <button className='submit-button' onClick={this.handleClick}>Refresh List</button>
+      <section className="BeanList">
+        <div className="checkbox-wrapper">
+          <CheckBox
+            handleChange={this.handleChange}
+            checked={this.state.flavorsSelected.get(flavors.flavor_name)}
+            handleClick={this.handleClick}
+          />
+          <button className="submit-button" onClick={this.handleClick}>
+            Refresh List
+          </button>
         </div>
-        
-        <div className='beanlist-wrapper' aria-live='polite'>
-          <header className='beanlist-header'>LIST OF BEANS</header>
-            <div className='beanlist'>
-              {beans.map((bean, idx) => {
-                  return (
-                  <BeanCard
-                    key={idx}
-                    {...bean}
-                  />
-                  )
-                })
-              }
-            </div>
+
+        <div className="beanlist-wrapper" aria-live="polite">
+          <header className="beanlist-header">ALL BEANS</header>
+          <div className="beanlist">
+            {beans.map((bean, idx) => {
+              return <BeanCard key={idx} {...bean} />;
+            })}
+          </div>
         </div>
       </section>
-    )
+    );
   }
 }
-

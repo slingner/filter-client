@@ -5,33 +5,31 @@
   align-content: center;
 } */
 
-
 .checkbox {
   display: flex;
   justify-content: left;
   font-family: 'Montserrat', sans-serif;
   font-size: 15px;
-  padding-left: 30px;
- 
+  padding-left: 10px;
 }
 
-input[type=checkbox] {
+input[type='checkbox'] {
   display: inline-block;
-  width: 8px;  
-  height: 8px;  
+  width: 8px;
+  height: 8px;
   vertical-align: middle;
-  margin-right: 8px;    
+  margin-right: 8px;
   padding: 8px;
   margin-bottom: 12px;
 }
 
 .FlavorFilter {
   text-align: left;
-  padding: 10px;
-  padding-left: 30px;
-  font-size: 20px;
+  /* padding: 10px; */
+  padding-left: 10px;
+  padding-bottom: 13px;
+  font-size: 25px;
   font-weight: 900;
   color: rgb(96, 90, 90);
   font-family: 'Montserrat', sans-serif;
-} 
-
+}

@@ -1,23 +1,23 @@
-.Bean{
+.Bean {
   list-style-type: none;
   font-family: 'Montserrat', sans-serif;
   color: white;
   background-color: rgb(130, 114, 93);
   border: 1px solid grey;
-  -webkit-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
-  -moz-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
-  box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  box-shadow: 14px 17px 23px -14px rgba(145, 132, 116, 1);
   border-radius: 5px;
   margin: 30px;
-  text-align: left;
+  padding: 15px;
+  /* text-align: left; */
+  min-width: 300px;
+  min-height: 300px;
 }
 
-.save{
+.save {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   border-radius: 5px;
 }
 
 @media screen and (max-width: 600px) {
-
 }

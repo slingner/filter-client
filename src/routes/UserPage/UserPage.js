@@ -5,7 +5,6 @@ import './UserPage.css';
 import CheckBox from '../../components/Checkbox/Checkbox';
 import config from '../../config';
 
-
 export default class BeanListPage extends Component {
   state = {
     flavors: [],
@@ -21,77 +20,82 @@ export default class BeanListPage extends Component {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-      }
+      },
     })
-      .then(res => {
+      .then((res) => {
         if (!res.ok) {
-          return res.json().then(error => Promise.reject(error))
+          return res.json().then((error) => Promise.reject(error));
         }
-        return res.json()
+        return res.json();
       })
-      .then(flavors => 
+      .then((flavors) =>
         this.setState({
           flavors,
           error: null,
-      }))
-      .catch(error => {
-        console.error(error)
-        this.setState({ error })
-      })
+        })
+      )
+      .catch((error) => {
+        console.error(error);
+        this.setState({ error });
+      });
   }
 
   handleChange = (e) => {
     const item = e.target.id;
     const isChecked = e.target.checked;
-    this.setState(prevState => ({ flavorsSelected: prevState.flavorsSelected.set(item, isChecked) }));
-  }
+    this.setState((prevState) => ({
+      flavorsSelected: prevState.flavorsSelected.set(item, isChecked),
+    }));
+  };
 
   handleClick = () => {
     //do a loop through flavors selected
     //create a new array of checked ids
-    const map = this.state.flavorsSelected
-    let array = Array.from(map.entries())
-    array = array.filter(val => {
-      return val[1] === true
-    }).map(val => {
-      return val[0]
-    })
-    this.context.fetchBeansByFlavorId(array, true)
-  }
+    const map = this.state.flavorsSelected;
+    let array = Array.from(map.entries());
+    array = array
+      .filter((val) => {
+        return val[1] === true;
+      })
+      .map((val) => {
+        return val[0];
+      });
+    this.context.fetchBeansByFlavorId(array, true);
+  };
 
   render() {
-    const { userBeans } = this.context
-    const { flavors } = this.state
-   
+    const { userBeans } = this.context;
+    const { flavors } = this.state;
+
     return (
-      <section className='BeanList'>
-        <div className='checkbox-wrapper'>
-            <CheckBox 
-              handleChange={this.handleChange}
-              checked={this.state.flavorsSelected.get(flavors.flavor_name)}
-              handleClick={this.handleClick}
-            />    
-            <button className='submit-button' onClick={this.handleClick}>Refresh List</button>
+      <section className="BeanList">
+        <div className="checkbox-wrapper">
+          <CheckBox
+            handleChange={this.handleChange}
+            checked={this.state.flavorsSelected.get(flavors.flavor_name)}
+            handleClick={this.handleClick}
+          />
+          <button className="submit-button" onClick={this.handleClick}>
+            Refresh List
+          </button>
         </div>
-        
-        <div className='BookmarkList__list' aria-live='polite'>
-          <header className='beanlist-header'>YOUR SAVED BEANS</header>
-          <div className='beanlist'>
-              {userBeans.map((bean, idx) => {
-                  return (
-                  <UserBeanCard
-                    key={idx}
-                    {...bean}
-                    userBeans={this.context.userBeans}
-                    beans={this.context.beans}
-                  />
-                  )
-                })
-              }
+
+        <div className="BookmarkList__list" aria-live="polite">
+          <header className="beanlist-header">SAVED BEANS</header>
+          <div className="beanlist">
+            {userBeans.map((bean, idx) => {
+              return (
+                <UserBeanCard
+                  key={idx}
+                  {...bean}
+                  userBeans={this.context.userBeans}
+                  beans={this.context.beans}
+                />
+              );
+            })}
           </div>
         </div>
       </section>
-    )
+    );
   }
 }
-

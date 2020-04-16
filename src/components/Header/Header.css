@@ -2,8 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css?family=Delius&display=swap');
 
+.header {
+  display: flex;
+  flex-direction: row;
+}
 
-.nav-bar >  {
+.nav-bar > {
   color: black;
   display: flex;
   justify-content: left;
@@ -38,7 +42,6 @@
   font-size: 45px;
 }
 
-
 @media screen and (max-width: 600px) {
   .Links {
     display: flex;
@@ -59,5 +62,4 @@
     margin-top: 10px;
     font-size: 40px;
   }
-
 }

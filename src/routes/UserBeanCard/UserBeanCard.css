@@ -1,12 +1,10 @@
-.Bean{
+.Bean {
   list-style-type: none;
   font-family: 'Montserrat', sans-serif;
   color: white;
   background-color: rgb(130, 114, 93);
   border: 1px solid grey;
-  -webkit-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
-  -moz-box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
-  box-shadow: 14px 17px 23px -14px rgba(145,132,116,1);
+  box-shadow: 14px 17px 23px -14px rgba(145, 132, 116, 1);
   border-radius: 5px;
   margin: 30px;
   padding: 15px;
@@ -38,7 +36,7 @@
   margin-top: 10px;
 }
 
-.review-submit-button{
+.review-submit-button {
   font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   border-radius: 5px;
@@ -49,4 +47,3 @@
   font-size: 16px;
   border-radius: 5px;
 }
-
