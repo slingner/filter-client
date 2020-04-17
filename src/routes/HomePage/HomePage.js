@@ -7,7 +7,7 @@ import savedbeans from './Assets/savedbeans.png';
 import './HomePage.css';
 import { NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-service';
-import { ReactComponent as FilterLogo } from './Assets/FILTER_ICON.svg';
+import { ReactComponent as FilterLogo } from './Assets/ICON.svg';
 
 export default class HomePage extends Component {
   render() {
