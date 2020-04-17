@@ -3,6 +3,7 @@ import './BeanCard.css';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 import BeansListContext from '../../contexts/BeansListContext';
+import { ReactComponent as FilterLogo } from '../HomePage/Assets/ICON.svg';
 
 export default class BeanPage extends React.Component {
   state = {
@@ -61,7 +62,10 @@ export default class BeanPage extends React.Component {
   render() {
     return (
       <div className="Bean">
-        <h3 className="Bean_name">{this.props.bean_name}</h3>
+        <FilterLogo style={{ width: '30px', fill: 'white' }} />
+        <h3 className="Bean_name" style={{ margin: '5px' }}>
+          {this.props.bean_name}
+        </h3>
         <p className="Bean_origin">
           <em>Origin:</em>
           <br /> {this.props.bean_origin}
