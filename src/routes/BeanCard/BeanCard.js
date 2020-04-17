@@ -46,7 +46,7 @@ export default class BeanPage extends React.Component {
     const saved = arrayOfIds.includes(this.props.id);
 
     return saved ? (
-      <span>{'Added to favorites'}</span>
+      <p className="added">{'Added to favorites'}</p>
     ) : (
       <button
         className="save"
