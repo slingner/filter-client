@@ -9,7 +9,7 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
   >
     <section>
       <header>
-        <ForwardRef(SvgFilterIcon)
+        <ForwardRef(SvgIcon)
           style={
             Object {
               "fill": "rgb(90, 90, 90)",
