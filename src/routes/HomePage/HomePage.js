@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import coffee4 from './Assets/coffee4.jpg';
-import coffee3 from './Assets/coffee3.jpg';
-import coffee2 from './Assets/coffee2.jpg';
+// import coffee3 from './Assets/coffee3.jpg';
+// import coffee2 from './Assets/coffee2.jpg';
 import beanlist from './Assets/beanlist.png';
 import savedbeans from './Assets/savedbeans.png';
 import './HomePage.css';
