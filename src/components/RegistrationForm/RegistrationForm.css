@@ -1,3 +1,26 @@
 form {
   font-family: 'Montserrat', sans-serif;
+  justify-content: left;
+  background-color: rgb(199, 199, 199, 0.9);
+  margin: auto;
+  width: 55%;
+  padding: 50px;
+  color: rgb(105, 105, 105);
+  font-size: 16px;
+}
+
+.filterHand {
+  width: 150px;
+  fill: rgb(47, 47, 47);
+}
+
+@media (min-width: 600px) {
+  form {
+    font-size: 18px;
+    width: 70%;
+  }
+
+  .filterHand {
+    width: 250px;
+  }
 }

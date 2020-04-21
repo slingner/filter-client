@@ -33,7 +33,7 @@ class Header extends Component {
           Log in
         </NavLink>
         <NavLink className="Links" to="/register">
-          Register
+          Sign Up
         </NavLink>
       </>
     );

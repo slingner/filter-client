@@ -3,6 +3,7 @@ import { Button, Input } from '../Utils/Utils';
 import AuthApiService from '../../services/auth-api-service';
 import TokenService from '../../services/token-service';
 import { ReactComponent as FlowerFilter } from './flowerfilter.svg';
+import './LoginForm.css';
 export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {},
@@ -38,13 +39,14 @@ export default class LoginForm extends Component {
         <div role="alert">{error && <p className="red">{error}</p>}</div>
         <FlowerFilter
           style={{
-            fill: 'rgb(210,210,210)',
+            fill: 'rgb(47, 47, 47)',
             margin: 'auto',
-            width: '100px',
-            marginTop: '40px',
+            width: '150px',
+            marginBottom: '4px',
             justifyContent: 'center',
           }}
         />
+        <h2 className="login"> Log In </h2>
 
         <div className="user_name">
           <label htmlFor="LoginForm__user_name" />

@@ -1,11 +1,13 @@
 .LoginPage {
+  display: flex;
+  flex-direction: column;
   background-image: url(./coffee2.jpg);
-  box-shadow: inset 0 0 0 1000px rgba(72, 47, 34, 0.5);
+  box-shadow: inset 0 0 0 1000px rgba(72, 47, 34, 0.2);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
   text-align: center;
-  margin: 0;
+  margin: auto;
   padding: 0;
 }

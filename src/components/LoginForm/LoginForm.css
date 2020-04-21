@@ -1,0 +1,11 @@
+.LoginForm {
+  margin-top: 15%;
+  padding: 50px 50px 70px 50px;
+}
+
+@media (min-width: 600px) {
+  .LoginForm {
+    margin-top: 10%;
+    padding: 55px 80px 90px 80px;
+  }
+}
