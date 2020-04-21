@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './Header.css';
 import TokenService from '../../services/token-service';
 import { ReactComponent as FilterText } from './Assets/FILTER_TEXT.svg';
+import { ReactComponent as FilterLogo } from '../../routes/HomePage/Assets/ICON.svg';
 
 class Header extends Component {
   //if a user is logged in, this is what displays in NavBar
@@ -40,19 +41,20 @@ class Header extends Component {
 
   render() {
     return (
-      <>
-        <header className="header">
-          <NavLink to={'/'} className="nav-title">
-            <FilterText style={{ width: '100px', fill: 'rgb(90, 90, 90)' }} />
-          </NavLink>
-        </header>
+      <div className="headerWrapper">
+        {/* <header className="header"> */}
+        <NavLink to={'/'} className="nav-title">
+          <FilterLogo className="logo" />
+          <FilterText className="filterTextLogo" />
+        </NavLink>
+        {/* </header> */}
         <nav className="nav-bar">
           {/* hasAuthToken checks for log in or out state */}
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
             : this.renderLoginLink()}
         </nav>
-      </>
+      </div>
     );
   }
 }

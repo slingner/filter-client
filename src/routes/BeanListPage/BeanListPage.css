@@ -29,7 +29,6 @@
   justify-content: left;
   flex-direction: right;
 }
-
 .checkbox-wrapper {
   display: flex;
   /* justify-content: start; */
@@ -64,6 +63,10 @@
     background-color: rgb(110, 147, 115);
     color: white;
     font-family: 'Montserrat', sans-serif;
+  }
+
+  .checkbox-wrapper {
+    margin: 15px auto;
   }
 }
 
