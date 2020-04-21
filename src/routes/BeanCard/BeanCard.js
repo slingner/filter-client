@@ -8,6 +8,7 @@ import { ReactComponent as FilterLogo } from '../HomePage/Assets/ICON.svg';
 export default class BeanPage extends React.Component {
   state = {
     beanUser: null,
+    toggle: true,
   };
 
   static contextType = BeansListContext;
@@ -59,35 +60,45 @@ export default class BeanPage extends React.Component {
     );
   };
 
+  handleToggle = () => {
+    this.setState({
+      toggle: !this.state.toggle,
+    });
+  };
+
   render() {
     return (
-      <div className="Bean">
-        <FilterLogo style={{ width: '30px', fill: 'white' }} />
+      <div className="Bean" onClick={this.handleToggle}>
+        <FilterLogo className="cardlogo" />
         <h3 className="Bean_name" style={{ margin: '5px' }}>
           {this.props.bean_name}
         </h3>
-        <p className="Bean_origin">
-          <em>Origin:</em>
-          <br /> {this.props.bean_origin}
-        </p>
-        <p className="Bean_masl">
-          <em>Meters Above Sea Level:</em> <br />
-          {this.props.bean_masl}
-        </p>
-        <p className="Bean_grower">
-          <em>Grower:</em>
-          <br /> {this.props.bean_grower}
-        </p>
-        <p className="Bean_process">
-          <em>Process:</em> <br />
-          {this.props.bean_process}
-        </p>
-        <p className="flavor_notes">
-          <em>Flavor Notes:</em>
-          <br />
-          {this.props.flavor_notes}
-        </p>
-        {TokenService.hasAuthToken() ? this.showSavedStatus() : ''}
+        {!this.state.toggle && (
+          <div>
+            <p className="Bean_origin">
+              <em>Origin:</em>
+              <br /> {this.props.bean_origin}
+            </p>
+            <p className="Bean_masl">
+              <em>Meters Above Sea Level:</em> <br />
+              {this.props.bean_masl}
+            </p>
+            <p className="Bean_grower">
+              <em>Grower:</em>
+              <br /> {this.props.bean_grower}
+            </p>
+            <p className="Bean_process">
+              <em>Process:</em> <br />
+              {this.props.bean_process}
+            </p>
+            <p className="flavor_notes">
+              <em>Flavor Notes:</em>
+              <br />
+              {this.props.flavor_notes}
+            </p>
+            {TokenService.hasAuthToken() ? this.showSavedStatus() : ''}
+          </div>
+        )}
       </div>
     );
   }
