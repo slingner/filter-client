@@ -4,18 +4,19 @@ import AuthApiService from '../../services/auth-api-service';
 import TokenService from '../../services/token-service';
 import { ReactComponent as FlowerFilter } from './flowerfilter.svg';
 import './LoginForm.css';
+import Loader from 'react-loader-spinner';
 export default class LoginForm extends Component {
   static defaultProps = {
     onLoginSuccess: () => {},
   };
 
-  state = { error: null };
+  state = { error: null, loading: false };
 
   handleSubmitJwtAuth = (event) => {
     event.preventDefault();
     const { user_name, password } = event.target;
 
-    this.setState({ error: null });
+    this.setState({ error: null, loading: true });
 
     AuthApiService.postLogin({
       user_name: user_name.value,
@@ -33,43 +34,59 @@ export default class LoginForm extends Component {
   };
 
   render() {
-    const { error } = this.state;
+    const { error, loading } = this.state;
     return (
-      <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
-        <FlowerFilter
-          style={{
-            fill: 'rgb(47, 47, 47)',
-            margin: 'auto',
-            width: '150px',
-            marginBottom: '4px',
-            justifyContent: 'center',
-          }}
-        />
-        <h2 className="login"> Log In </h2>
+      <>
+        {loading ? (
+          <Loader
+            type="Grid"
+            height={80}
+            width={80}
+            color="white"
+            style={{
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              marginTop: '50px',
+            }}
+          />
+        ) : (
+          <form className="LoginForm" onSubmit={this.handleSubmitJwtAuth}>
+            <div role="alert">{error && <p className="red">{error}</p>}</div>
+            <FlowerFilter
+              style={{
+                fill: 'rgb(47, 47, 47)',
+                margin: 'auto',
+                width: '150px',
+                marginBottom: '4px',
+                justifyContent: 'center',
+              }}
+            />
+            <h2 className="login"> Log In </h2>
 
-        <div className="user_name">
-          <label htmlFor="LoginForm__user_name" />
+            <div className="user_name">
+              <label htmlFor="LoginForm__user_name" />
 
-          <Input
-            required
-            name="user_name"
-            id="LoginForm__user_name"
-            placeholder="Username"
-          ></Input>
-        </div>
+              <Input
+                required
+                name="user_name"
+                id="LoginForm__user_name"
+                placeholder="Username"
+              ></Input>
+            </div>
 
-        <label htmlFor="LoginForm__password" />
-        <Input
-          required
-          name="password"
-          type="password"
-          id="LoginForm__password"
-          placeholder="Password"
-        ></Input>
+            <label htmlFor="LoginForm__password" />
+            <Input
+              required
+              name="password"
+              type="password"
+              id="LoginForm__password"
+              placeholder="Password"
+            ></Input>
 
-        <Button type="submit">Login</Button>
-      </form>
+            <Button type="submit">Login</Button>
+          </form>
+        )}
+      </>
     );
   }
 }

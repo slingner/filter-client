@@ -1,33 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<HomePage /> renders HomePage by default 1`] = `
-<div
-  className="HomePage-wrapper"
->
-  <main
-    className="main"
+<Fragment>
+  <section
+    className="bean-in-hand-img"
   >
-    <section>
-      <header>
-        <ForwardRef(SvgIcon)
-          style={
-            Object {
-              "fill": "rgb(90, 90, 90)",
-              "width": "140px",
-            }
-          }
-        />
-      </header>
-      <p>
-        Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles.
-      </p>
-      <img
-        alt="coffee4"
-        className="bean-in-hand-img"
-        src="coffee4.jpg"
-      />
-    </section>
-    <section>
+    <ForwardRef(SvgIcon)
+      className="homeLogo"
+    />
+    <p
+      className="headertext"
+    >
+      Discover and explore small batch roasted coffee beans from around the world by filtering through a collection of beans by their unique flavor profiles.
+    </p>
+  </section>
+  <div
+    className="HomePage-wrapper"
+  >
+    <div
+      className="content"
+    >
       <header>
         <h3>
           Keep track and learn about your favorite beans
@@ -55,26 +47,22 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
         FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world.
          
       </p>
-      <img
-        alt="coffee2"
-        className="coffee-froth-img"
-        src="coffee2.jpg"
-      />
-      <p>
-        FILTER away!
-      </p>
-      <img
-        alt="coffee3"
-        className="coffee-filter-img"
-        src="coffee3.jpg"
-      />
-    </section>
+    </div>
     <br />
     <NavLink
       to="/register"
     >
       Sign Up Now!
     </NavLink>
-  </main>
-</div>
+    <ForwardRef(SvgFilterlogohand)
+      style={
+        Object {
+          "fill": "rgb(130, 114, 93)",
+          "margin": "auto",
+          "width": "350px",
+        }
+      }
+    />
+  </div>
+</Fragment>
 `;

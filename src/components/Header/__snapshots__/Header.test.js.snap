@@ -1,24 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header component renders the header 1`] = `
-<Fragment>
-  <header
-    className="header"
+<div
+  className="headerWrapper"
+>
+  <NavLink
+    className="nav-title"
+    to="/"
   >
-    <NavLink
-      className="nav-title"
-      to="/"
-    >
-      <ForwardRef(SvgFilterText)
-        style={
-          Object {
-            "fill": "rgb(90, 90, 90)",
-            "width": "100px",
-          }
-        }
-      />
-    </NavLink>
-  </header>
+    <ForwardRef(SvgIcon)
+      className="logo"
+    />
+    <ForwardRef(SvgFilterText)
+      className="filterTextLogo"
+    />
+  </NavLink>
   <nav
     className="nav-bar"
   >
@@ -38,31 +34,27 @@ exports[`Header component renders the header 1`] = `
       className="Links"
       to="/register"
     >
-      Register
+      Sign Up
     </NavLink>
   </nav>
-</Fragment>
+</div>
 `;
 
 exports[`Header component renders the header by default 1`] = `
-<Fragment>
-  <header
-    className="header"
+<div
+  className="headerWrapper"
+>
+  <NavLink
+    className="nav-title"
+    to="/"
   >
-    <NavLink
-      className="nav-title"
-      to="/"
-    >
-      <ForwardRef(SvgFilterText)
-        style={
-          Object {
-            "fill": "rgb(90, 90, 90)",
-            "width": "100px",
-          }
-        }
-      />
-    </NavLink>
-  </header>
+    <ForwardRef(SvgIcon)
+      className="logo"
+    />
+    <ForwardRef(SvgFilterText)
+      className="filterTextLogo"
+    />
+  </NavLink>
   <nav
     className="nav-bar"
   >
@@ -82,8 +74,8 @@ exports[`Header component renders the header by default 1`] = `
       className="Links"
       to="/register"
     >
-      Register
+      Sign Up
     </NavLink>
   </nav>
-</Fragment>
+</div>
 `;

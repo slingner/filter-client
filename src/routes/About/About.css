@@ -1,0 +1,22 @@
+.about {
+  display: flex;
+  flex-direction: column;
+  color: rgb(96, 96, 96);
+  justify-content: center;
+  text-align: center;
+  width: 40%;
+  margin: auto;
+  line-height: 33px;
+}
+
+.aboutHeader {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 50px;
+}
+
+.filterHand {
+  margin: auto;
+  padding-top: 40px;
+  fill: rgb(76, 76, 76);
+  width: 55%;
+}

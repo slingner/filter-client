@@ -9,6 +9,7 @@ import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegistrationPage from '../../routes/RegistrationPage/RegistrationPage';
 import UserPage from '../../routes/UserPage/UserPage';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
+import About from '../../routes/About/About';
 import BeansListContext from '../../contexts/BeansListContext';
 import config from '../../config';
 import TokenService from '../../services/token-service';
@@ -204,6 +205,7 @@ export default class App extends React.Component {
                 component={LoginPage}
                 handleLoginSuccess={this.handleLoginSuccess}
               />
+              <Route path={'/about'} component={About} />
               <PublicOnlyRoute
                 path={'/register'}
                 component={RegistrationPage}

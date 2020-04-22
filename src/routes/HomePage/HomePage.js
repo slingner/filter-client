@@ -8,7 +8,8 @@ import './HomePage.css';
 import { NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import { ReactComponent as FilterLogo } from './Assets/ICON.svg';
-import { ReactComponent as FilterLogoHand } from './Assets/filterlogohand.svg';
+
+import { ReactComponent as CoffeeBirdy } from './Assets/coffeebirdy.svg';
 
 export default class HomePage extends Component {
   render() {
@@ -64,11 +65,12 @@ export default class HomePage extends Component {
           ) : (
             <NavLink to="/register">Sign Up Now!</NavLink>
           )}
-          <FilterLogoHand
+          <CoffeeBirdy
             style={{
               fill: 'rgb(130, 114, 93)',
-              width: '350px',
+              width: '150px',
               margin: 'auto',
+              marginTop: '30px',
             }}
           />
           {/* <p>

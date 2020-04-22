@@ -10,12 +10,16 @@ class Header extends Component {
   renderLogoutLink = () => {
     return (
       <>
+        <NavLink className="Links" to="/about">
+          About
+        </NavLink>
         <NavLink className="Links" to="/BeanList">
           All Beans
         </NavLink>
         <NavLink className="Links" to="/Account">
           Your Beans
         </NavLink>
+
         <NavLink className="Links" onClick={this.props.logoutClick} to="/">
           Logout
         </NavLink>
@@ -26,6 +30,9 @@ class Header extends Component {
   renderLoginLink = () => {
     return (
       <>
+        <NavLink className="Links" to="/about">
+          About
+        </NavLink>
         <NavLink className="Links" to="/BeanList">
           All Beans
         </NavLink>

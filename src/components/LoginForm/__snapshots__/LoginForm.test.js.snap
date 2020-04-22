@@ -8,37 +8,49 @@ exports[`<Login /> renders UI as expected 1`] = `
   <div
     role="alert"
   />
+  <svg
+    style={
+      Object {
+        "fill": "rgb(47, 47, 47)",
+        "justifyContent": "center",
+        "margin": "auto",
+        "marginBottom": "4px",
+        "width": "150px",
+      }
+    }
+  >
+    flowerfilter.svg
+  </svg>
+  <h2
+    className="login"
+  >
+     Log In 
+  </h2>
   <div
     className="user_name"
   >
     <label
       htmlFor="LoginForm__user_name"
-    >
-      User name
-    </label>
+    />
     <input
       className="Input "
       id="LoginForm__user_name"
       name="user_name"
+      placeholder="Username"
       required={true}
     />
   </div>
-  <div
-    className="password"
-  >
-    <label
-      htmlFor="LoginForm__password"
-    >
-      Password
-    </label>
-    <input
-      className="Input "
-      id="LoginForm__password"
-      name="password"
-      required={true}
-      type="password"
-    />
-  </div>
+  <label
+    htmlFor="LoginForm__password"
+  />
+  <input
+    className="Input "
+    id="LoginForm__password"
+    name="password"
+    placeholder="Password"
+    required={true}
+    type="password"
+  />
   <button
     className="Button "
     type="submit"
