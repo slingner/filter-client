@@ -43,7 +43,7 @@
 
 .Button {
   display: block;
-  background-color: rgb(180, 94, 41);
+  background-color: rgb(130, 114, 93);
   font-size: 1.1em;
   padding: 10px;
   color: white;
@@ -52,6 +52,11 @@
   border-radius: 40px;
   margin: 15px auto;
   font-family: 'Montserrat', sans-serif;
+}
+
+.Button:hover {
+  background-color: rgb(130, 130, 130);
+  color: white;
 }
 
 @media (min-width: 600px) {

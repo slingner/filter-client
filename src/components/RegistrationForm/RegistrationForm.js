@@ -38,7 +38,7 @@ export default class RegistrationForm extends Component {
     return (
       <form className="RegistrationForm" onSubmit={this.handleSubmit}>
         <div role="alert">{error && <p className="red">{error}</p>}</div>
-        <FilterHand className="filterHand" />
+        <FilterHand className="filterHandBean" />
         <h2 className="welcome"> Welcome To Filter </h2>
         <div className="full_name">
           <label htmlFor="RegistrationForm__full_name" />

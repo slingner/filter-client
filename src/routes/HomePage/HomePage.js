@@ -35,42 +35,32 @@ export default class HomePage extends Component {
               Origin, MASL(Meters Above Sea Level), Grower, Process and Flavor
               Notes.{' '}
             </p>
-            <img
-              src={beanlist}
-              className="screenshot-saved-bean-img"
-              alt="savedbeans"
-            />
+
             <p>
               Once you've found some beans that give you a jolt, save them to
               your personalized collection and leave notes for yourself
-              regarding each bean!
+              regarding each bean.
             </p>
-            <img
-              src={savedbeans}
-              className="screenshot-saved-bean-img"
-              alt="savedbeans"
-            />
+
             <p>
               FILTER gives you the chance to explore coffee that is responsibly
               sourced from crops around the world.{' '}
             </p>
-
-            {/* <img src={coffee2} className="coffee-froth-img" alt="coffee2" />
-          <p>FILTER away!</p>
-          <img src={coffee3} className="coffee-filter-img" alt="coffee3" /> */}
           </div>
           <br />
           {TokenService.hasAuthToken() ? (
             ''
           ) : (
-            <NavLink to="/register">Sign Up Now!</NavLink>
+            <NavLink to="/register" className="signUp">
+              Get Started
+            </NavLink>
           )}
           <CoffeeBirdy
             style={{
               fill: 'rgb(130, 114, 93)',
               width: '150px',
               margin: 'auto',
-              marginTop: '30px',
+              marginTop: '40px',
             }}
           />
           {/* <p>

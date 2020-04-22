@@ -14,7 +14,7 @@ class Header extends Component {
           About
         </NavLink>
         <NavLink className="Links" to="/BeanList">
-          All Beans
+          Beans
         </NavLink>
         <NavLink className="Links" to="/Account">
           Your Beans
@@ -34,7 +34,7 @@ class Header extends Component {
           About
         </NavLink>
         <NavLink className="Links" to="/BeanList">
-          All Beans
+          Beans
         </NavLink>
         <NavLink className="Links" to="/login">
           Log in

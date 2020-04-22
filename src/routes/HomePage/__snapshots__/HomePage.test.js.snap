@@ -54,12 +54,13 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
     >
       Sign Up Now!
     </NavLink>
-    <ForwardRef(SvgFilterlogohand)
+    <ForwardRef(SvgCoffeebirdy)
       style={
         Object {
           "fill": "rgb(130, 114, 93)",
           "margin": "auto",
-          "width": "350px",
+          "marginTop": "30px",
+          "width": "150px",
         }
       }
     />

@@ -7,20 +7,22 @@ form {
   padding: 50px;
   color: rgb(105, 105, 105);
   font-size: 16px;
+  margin-top: 15%;
 }
 
-.filterHand {
+.filterHandBean {
   width: 150px;
-  fill: rgb(47, 47, 47);
+  fill: rgb(74, 74, 74);
 }
 
 @media (min-width: 600px) {
   form {
     font-size: 18px;
     width: 70%;
+    margin-top: 7%;
   }
 
-  .filterHand {
+  .filterHandBean {
     width: 250px;
   }
 }

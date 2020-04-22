@@ -20,6 +20,12 @@ exports[`Header component renders the header 1`] = `
   >
     <NavLink
       className="Links"
+      to="/about"
+    >
+      About
+    </NavLink>
+    <NavLink
+      className="Links"
       to="/BeanList"
     >
       All Beans
@@ -58,6 +64,12 @@ exports[`Header component renders the header by default 1`] = `
   <nav
     className="nav-bar"
   >
+    <NavLink
+      className="Links"
+      to="/about"
+    >
+      About
+    </NavLink>
     <NavLink
       className="Links"
       to="/BeanList"

@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   color: rgb(96, 96, 96);
+
   justify-content: center;
   text-align: center;
   width: 40%;
@@ -15,8 +16,18 @@
 }
 
 .filterHand {
-  margin: auto;
-  padding-top: 40px;
-  fill: rgb(76, 76, 76);
-  width: 55%;
+  fill: rgb(81, 81, 81);
+  width: 300px;
+  margin: 20px auto;
+}
+
+@media screen and (max-width: 600px) {
+  .about {
+    width: 70%;
+  }
+
+  .aboutHeader {
+    font-size: 50px;
+    line-height: 45px;
+  }
 }
