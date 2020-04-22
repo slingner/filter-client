@@ -10,8 +10,10 @@
 .beanlist {
   display: flex;
   justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
-} 
+  align-items: flex-start;
+}
 
 /* this centers the checkbox filter in center of page */
 .checkbox-wrapper {

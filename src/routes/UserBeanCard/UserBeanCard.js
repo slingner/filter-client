@@ -9,6 +9,7 @@ import { ReactComponent as FilterLogo } from '../HomePage/Assets/ICON.svg';
 export default class BeanPage extends React.Component {
   state = {
     reviews: [],
+    toggle: true,
   };
 
   static contextType = BeansListContext;
@@ -102,65 +103,77 @@ export default class BeanPage extends React.Component {
       });
   };
 
+  handleToggle = () => {
+    this.setState({
+      toggle: !this.state.toggle,
+    });
+  };
+
   render() {
     return (
       <div className="Bean">
-        <FilterLogo style={{ width: '30px', fill: 'white' }} />
-        <h3 className="Bean_name" style={{ margin: '5px' }}>
-          {this.props.bean_name}
-        </h3>
-        <p className="Bean_origin">
-          <em>Origin:</em>
-          <br /> {this.props.bean_origin}
-        </p>
-        <p className="Bean_masl">
-          <em>Meters Above Sea Level:</em>
-          <br /> {this.props.bean_masl}
-        </p>
-        <p className="Bean_grower">
-          <em>Grower:</em>
-          <br /> {this.props.bean_grower}
-        </p>
-        <p className="Bean_process">
-          <em>Process:</em>
-          <br /> {this.props.bean_process}
-        </p>
-        <p className="flavor_notes">
-          <em>Flavor Notes:</em>
-          <br /> {this.props.flavor_notes}
-        </p>
-        <form className="reviewSubmit" onSubmit={this.handleSubmit}>
-          <textarea
-            aria-label="Comment about this bean..."
-            name="text"
-            id={this.props.id}
-            cols="25"
-            rows="3"
-            placeholder="Comment about this bean.."
-            className="inputAboutBean"
-          ></textarea>
-          <button className="review-submit-button" type="submit">
-            Submit Bean Note
-          </button>
-        </form>
-        <ul className="reviews">
-          <em>Notes On Bean:</em>
-          <br />{' '}
-          {this.state.reviews.map((review) => (
-            <Review
-              key={`review-${review.id}`}
-              deleteReview={this.deleteReview}
-              reviewText={review.text}
-              reviewId={review.id}
-            />
-          ))}
-        </ul>
-        <button
-          className="delete-bean-card-button"
-          onClick={() => this.deleteBean(this.props.id)}
-        >
-          Delete Bean
-        </button>
+        <div onClick={this.handleToggle}>
+          <FilterLogo className="cardlogo" />
+          <h3 className="Bean_name" style={{ margin: '5px' }}>
+            {this.props.bean_name}
+          </h3>
+        </div>
+        {!this.state.toggle && (
+          <div>
+            <p className="Bean_origin">
+              <em>Origin:</em>
+              <br /> {this.props.bean_origin}
+            </p>
+            <p className="Bean_masl">
+              <em>Meters Above Sea Level:</em>
+              <br /> {this.props.bean_masl}
+            </p>
+            <p className="Bean_grower">
+              <em>Grower:</em>
+              <br /> {this.props.bean_grower}
+            </p>
+            <p className="Bean_process">
+              <em>Process:</em>
+              <br /> {this.props.bean_process}
+            </p>
+            <p className="flavor_notes">
+              <em>Flavor Notes:</em>
+              <br /> {this.props.flavor_notes}
+            </p>
+            <form className="reviewSubmit" onSubmit={this.handleSubmit}>
+              <textarea
+                aria-label="Comment about this bean..."
+                name="text"
+                id={this.props.id}
+                cols="25"
+                rows="3"
+                placeholder="Comment about this bean.."
+                className="inputAboutBean"
+              ></textarea>
+              <button className="review-submit-button" type="submit">
+                Submit
+              </button>
+            </form>
+            <ul className="reviews">
+              <em>Notes On Bean:</em>
+              <br />{' '}
+              {this.state.reviews.map((review) => (
+                <Review
+                  key={`review-${review.id}`}
+                  deleteReview={this.deleteReview}
+                  reviewText={review.text}
+                  reviewId={review.id}
+                />
+              ))}
+            </ul>
+            <button
+              className="delete-bean-card-button"
+              onClick={() => this.deleteBean(this.props.id)}
+            >
+              Delete Bean
+            </button>{' '}
+          </div>
+        )}
       </div>
     );
   }

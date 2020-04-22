@@ -29,6 +29,7 @@
   justify-content: left;
   flex-direction: right;
 }
+
 .checkbox-wrapper {
   display: flex;
   /* justify-content: start; */
