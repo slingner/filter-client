@@ -12,7 +12,7 @@ exports[`<RegistrationPage /> renders UI as expected 1`] = `
       role="alert"
     />
     <svg
-      className="filterHand"
+      className="filterHandBean"
     >
       filterlogohand.svg
     </svg>

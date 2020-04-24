@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import './Header.css';
 import TokenService from '../../services/token-service';
 import { ReactComponent as FilterText } from './Assets/FILTER_TEXT.svg';
-import { ReactComponent as FilterLogo } from '../../routes/HomePage/Assets/ICON.svg';
 
 class Header extends Component {
   //if a user is logged in, this is what displays in NavBar
@@ -51,7 +50,6 @@ class Header extends Component {
       <div className="headerWrapper">
         {/* <header className="header"> */}
         <NavLink to={'/'} className="nav-title">
-          <FilterLogo className="logo" />
           <FilterText className="filterTextLogo" />
         </NavLink>
         {/* </header> */}

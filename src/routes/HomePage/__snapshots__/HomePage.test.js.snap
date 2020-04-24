@@ -30,19 +30,9 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
         Browse through the collection to explore each bean's Country of Origin, MASL(Meters Above Sea Level), Grower, Process and Flavor Notes.
          
       </p>
-      <img
-        alt="savedbeans"
-        className="screenshot-saved-bean-img"
-        src="beanlist.png"
-      />
       <p>
-        Once you've found some beans that give you a jolt, save them to your personalized collection and leave notes for yourself regarding each bean!
+        Once you've found some beans that give you a jolt, save them to your personalized collection and leave notes for yourself regarding each bean.
       </p>
-      <img
-        alt="savedbeans"
-        className="screenshot-saved-bean-img"
-        src="savedbeans.png"
-      />
       <p>
         FILTER gives you the chance to explore coffee that is responsibly sourced from crops around the world.
          
@@ -50,16 +40,17 @@ exports[`<HomePage /> renders HomePage by default 1`] = `
     </div>
     <br />
     <NavLink
+      className="signUp"
       to="/register"
     >
-      Sign Up Now!
+      Get Started
     </NavLink>
     <ForwardRef(SvgCoffeebirdy)
       style={
         Object {
           "fill": "rgb(130, 114, 93)",
           "margin": "auto",
-          "marginTop": "30px",
+          "marginTop": "40px",
           "width": "150px",
         }
       }

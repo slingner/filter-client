@@ -28,7 +28,7 @@ exports[`Header component renders the header 1`] = `
       className="Links"
       to="/BeanList"
     >
-      All Beans
+      Beans
     </NavLink>
     <NavLink
       className="Links"
@@ -74,7 +74,7 @@ exports[`Header component renders the header by default 1`] = `
       className="Links"
       to="/BeanList"
     >
-      All Beans
+      Beans
     </NavLink>
     <NavLink
       className="Links"

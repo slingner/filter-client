@@ -51,10 +51,11 @@
 }
 
 .filterTextLogo {
-  width: 100px;
+  width: 30%;
   align-self: center;
   fill: rgb(251, 251, 251);
-  /* margin-left: 5px; */
+  margin-top: 2%;
+  margin-left: 5%;
 }
 
 .logo {
@@ -91,6 +92,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
+    align-items: baseline;
   }
 
   .nav-bar .Links {
@@ -102,5 +104,6 @@
 
   .filterTextLogo {
     fill: white;
+    width: 85%;
   }
 }

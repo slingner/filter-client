@@ -1,14 +1,8 @@
 import React, { Component } from 'react';
-// import coffee4 from './Assets/coffee4.jpg';
-// import coffee3 from './Assets/coffee3.jpg';
-// import coffee2 from './Assets/coffee2.jpg';
-import beanlist from './Assets/beanlist.png';
-import savedbeans from './Assets/savedbeans.png';
 import './HomePage.css';
 import { NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import { ReactComponent as FilterLogo } from './Assets/ICON.svg';
-
 import { ReactComponent as CoffeeBirdy } from './Assets/coffeebirdy.svg';
 
 export default class HomePage extends Component {
@@ -63,16 +57,6 @@ export default class HomePage extends Component {
               marginTop: '40px',
             }}
           />
-          {/* <p>
-            Demo FILTER and see how to save and take notes on each card by{' '}
-            <NavLink className="Links" to="/login">
-              logging in
-            </NavLink>{' '}
-            using:{' '}
-          </p>
-          <p> Username: dunder</p>
-          <p> Password: password</p>
-          <p></p> */}
         </div>
       </>
     );
