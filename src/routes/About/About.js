@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Section } from '../../components/Utils/Utils';
 import './About.css';
-import { ReactComponent as FilterLogoHand } from './filterlogohand.svg';
+import { ReactComponent as FlowerFilter } from './flowerfilter.svg';
 export default class About extends Component {
   render() {
     return (
       <Section className="about">
-        <FilterLogoHand className="filterHand" />
+        <FlowerFilter className="filterFlower" />
         <h2 className="aboutHeader">Savor Each Sip</h2>
 
         <p>

@@ -8,9 +8,6 @@ exports[`Header component renders the header 1`] = `
     className="nav-title"
     to="/"
   >
-    <ForwardRef(SvgIcon)
-      className="logo"
-    />
     <ForwardRef(SvgFilterText)
       className="filterTextLogo"
     />
@@ -54,9 +51,6 @@ exports[`Header component renders the header by default 1`] = `
     className="nav-title"
     to="/"
   >
-    <ForwardRef(SvgIcon)
-      className="logo"
-    />
     <ForwardRef(SvgFilterText)
       className="filterTextLogo"
     />

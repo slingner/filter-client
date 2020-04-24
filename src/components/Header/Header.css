@@ -92,7 +92,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     text-align: center;
-    align-items: baseline;
+    align-items: center;
   }
 
   .nav-bar .Links {
