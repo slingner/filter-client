@@ -12,18 +12,16 @@ export default class RegistrationForm extends Component {
 
   handleSubmit = (ev) => {
     ev.preventDefault();
-    const { full_name, nick_name, user_name, password } = ev.target;
+    const { full_name, user_name, password } = ev.target;
 
     this.setState({ error: null });
     AuthApiService.postUser({
       user_name: user_name.value,
       password: password.value,
       full_name: full_name.value,
-      nickname: nick_name.value,
     })
       .then((user) => {
         full_name.value = '';
-        nick_name.value = '';
         user_name.value = '';
         password.value = '';
         this.props.onRegistrationSuccess();
@@ -36,53 +34,44 @@ export default class RegistrationForm extends Component {
   render() {
     const { error } = this.state;
     return (
-      <form className="RegistrationForm" onSubmit={this.handleSubmit}>
-        <div role="alert">{error && <p className="red">{error}</p>}</div>
-        <FilterHand className="filterHandBean" />
-        <h2 className="welcome"> Welcome To Filter </h2>
-        <div className="full_name">
-          <label htmlFor="RegistrationForm__full_name" />
+      <form className='RegistrationForm' onSubmit={this.handleSubmit}>
+        <div role='alert'>{error && <p className='red'>{error}</p>}</div>
+        <FilterHand className='filterHandBean' />
+        <h2 className='welcome'> Welcome To Filter </h2>
+        <div className='full_name'>
+          <label htmlFor='RegistrationForm__full_name' />
           {/* <Required /> */}
           <Input
-            name="full_name"
-            type="text"
+            name='full_name'
+            type='text'
             required
-            id="RegistrationForm__full_name"
-            placeholder="Name"
+            id='RegistrationForm__full_name'
+            placeholder='Name'
           ></Input>
         </div>
-        <div className="user_name">
-          <label htmlFor="RegistrationForm__user_name" />
+        <div className='user_name'>
+          <label htmlFor='RegistrationForm__user_name' />
 
           <Input
-            name="user_name"
-            type="text"
-            required
-            id="RegistrationForm__user_name"
-            placeholder="Username"
-          ></Input>
-        </div>
-        <div className="password">
-          <label htmlFor="RegistrationForm__password" />
-          <Input
-            name="password"
-            type="password"
-            required
-            id="RegistrationForm__password"
-            placeholder="Password"
-          ></Input>
-        </div>
-        {/* <div className='nick_name'>
-          <label htmlFor='RegistrationForm__nick_name'>
-            Nickname
-          </label>
-          <Input
-            name='nick_name'
+            name='user_name'
             type='text'
-            id='RegistrationForm__nick_name'>
-          </Input>
-        </div> */}
-        <Button type="submit">Signup</Button>
+            required
+            id='RegistrationForm__user_name'
+            placeholder='Username'
+          ></Input>
+        </div>
+        <div className='password'>
+          <label htmlFor='RegistrationForm__password' />
+          <Input
+            name='password'
+            type='password'
+            required
+            id='RegistrationForm__password'
+            placeholder='Password'
+          ></Input>
+        </div>
+
+        <Button type='submit'>Signup</Button>
       </form>
     );
   }
